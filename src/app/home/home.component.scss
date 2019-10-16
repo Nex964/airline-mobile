@@ -1,0 +1,157 @@
+section {
+  width: 100vw;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 3px 40px #0004;
+  transform: translate(0, -10vh);
+  background: #fff;
+}
+
+.selector-date-cal {
+  // width: calc(100% - 40px);
+  background: #f7fcff;
+  border: solid 1px #e2e2e2;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 20px;
+
+  .mat-calendar-content .mat-calendar-table .mat-calendar-table-header tr th {
+    font-weight: 500 !important;
+  }
+}
+
+.calendar-wrapper {
+  ::ng-deep .mat-calendar-body-cell-content {
+    color: rgba(0, 0, 0, 0.87);
+    border: none;
+    font-weight: 600;
+    border-radius: 10px !important;
+    border-color: #ffffff;
+  }
+
+  ::ng-deep .special-date {
+    background-color: #3a91f7;
+    border-radius: 10px;
+
+    ::ng-deep .mat-calendar-body-cell-content{
+      color: #FFF;
+    }
+  }
+
+  ::ng-deep .mat-calendar-period-button.mat-button-base {
+    background: none;
+
+    ::ng-deep .mat-button-wrapper {
+      font-weight: 600;
+      font-size: 4vw;
+    }
+  }
+
+  ::ng-deep .mat-calendar-table-header-divider {
+    padding: 0 !important;
+  }
+
+  ::ng-deep .mat-icon-button.mat-button-base {
+    border-radius: 10px;
+    background: none;
+    border: solid 1px #3a91f7;
+  }
+
+  ::ng-deep .mat-calendar-body-label {
+    // color: rgb(255, 255, 255);
+    visibility: hidden;
+    height: 0;
+    padding: 0 !important;
+    font-size: 4vw;
+    font-weight: 700;
+  }
+
+  ::ng-deep .mat-calendar-table-header {
+    color: rgb(0, 0, 0);
+    font-weight: 600 !important;
+  }
+
+  ::ng-deep .mat-calendar-table {
+    border-spacing: 5px;
+    border-collapse: separate;
+    width: 100%;
+  }
+
+  ::ng-deep .custom-date-class {
+    background: #534fff;
+    border-radius: 6%;
+  }
+
+  ::ng-deep .mat-calendar-body-today.mat-calendar-body-selected {
+    box-shadow: none !important;
+  }
+
+  ::ng-deep .mat-calendar-body-selected {
+    background-color: #ecf0f1;
+    color: #3a91f7;
+    border-radius: 5px !important;
+  }
+
+  ::ng-deep .custom-date-class {
+    background: linear-gradient(to left bottom, #e83f94, #f54e5e);
+    border-radius: 6%;
+  }
+
+  ::ng-deep .mat-calendar-body-cell-content {
+  }
+}
+
+.custom-date-class {
+  background: linear-gradient(to left bottom, #e83f94, #f54e5e) !important;
+  border-radius: 100%;
+}
+
+.bottom-bar {
+  position: sticky;
+  top: 100vh;
+  width: 100%;
+
+  button {
+    font-size: 2vh;
+    background: #3a91f7;
+    color: #fff;
+    font-weight: 400;
+    padding: 10px;
+    width: calc(100% - 20px);
+    margin: 10px;
+    border-radius: 1000px;
+    letter-spacing: 1px;
+  }
+}
+
+.traveller {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: calc(100vw - 40px);
+  padding: 20px;
+  align-items: center;
+  background: #ecf0f1;
+
+  div {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 3.4vw;
+      font-weight: 300;
+      color: #2c3e50;
+    }
+    h4 {
+      font-size: 3.6vw;
+      font-weight: 600;
+      color: #3a91f7;
+    }
+  }
+
+  i {
+    color: #94a5a6;
+    font-size: 6vw;
+  }
+}

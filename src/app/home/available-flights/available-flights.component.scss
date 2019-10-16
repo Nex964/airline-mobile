@@ -1,0 +1,25 @@
+
+
+section{
+    .selector-flights{
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);    
+        margin-top: 20px;
+        span{
+            width: calc(100% - 40px);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #3A91F7;
+
+            h4{
+                font-weight: 600;
+            }
+
+            i{
+                margin-right: 10px;
+            }
+        }
+    }
+}

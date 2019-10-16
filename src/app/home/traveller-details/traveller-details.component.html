@@ -1,0 +1,86 @@
+<section>
+    <div class="master">
+        <div class="head">
+            <img src="assets/images/ic_flight.png">
+            <div>
+                <span>
+                    {{ startDate.toString().split(' ')[0] }},
+                    {{ startDate.toString().split(' ')[2] }}
+                    {{ startDate.toString().split(' ')[1] }}
+                </span>
+                <span>
+                    <h4>BOM </h4>
+                    <h3>
+                        {{ item.landing }}
+                    </h3>
+                </span>
+                <span>
+                    <h5>Delhi</h5>
+                </span>
+            </div>
+            <div>
+                <h5>{{item.totalTime}}</h5>
+                <!-- !Show time elapsed -->
+            </div>
+            <div>
+                <span>
+                    {{ endDate.toString().split(' ')[0] }},
+                    {{ endDate.toString().split(' ')[2] }}
+                    {{ endDate.toString().split(' ')[1] }}
+                </span>
+                <span>
+                    <h4>DEL </h4>
+                    <h3>
+                        {{ item.takeOff }}
+                    </h3>
+                </span>
+                <span>
+                    <h5>Mumbai</h5>
+                </span>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div>
+            <span>
+                <i class="fas fa-suitcase"></i>
+                <h4>Cabin : {{item.checkin.replace('kg', '')}} KG</h4>
+                <ul>
+                    <li>Check : {{item.baggage.replace('kg', '')}} KG</li>
+                </ul>
+            </span>
+            <span>
+                <i class="fas fa-utensils"></i>
+                <h4>Meal : {{ item.meal ? 'Yes' : 'No' }}</h4>
+            </span>
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>Traveller Information</h3>
+        <div *ngFor="let item of list">
+            <!-- <div class="selector"> -->
+                <h4>{{list.indexOf(item) + 1}} Traveller</h4>
+                <input #meal class="small" [matAutocomplete]="meal" value="{{item.gender}}">
+                <mat-autocomplete #meal="matAutocomplete">
+                    <mat-option (click)="item.gender = 'Mrs.'" value="Mrs.">Mrs.</mat-option>
+                    <mat-option (click)="item.gender = 'Ms.'" value="Ms.">Ms.</mat-option>
+                </mat-autocomplete>
+                <!-- <i class="fas fa-chevron-down"></i> -->
+            <!-- </div> -->
+            <input name="firstname" placeholder="First Name" (keyup)="item.name = $event.target.value" [value]="item.name">
+            <input name="lastname" placeholder="Last Name" (keyup)="item.age = $event.target.value" [value]="item.age">
+        </div>
+
+        <h3>Traveller Contact Information</h3>
+        <h6>Will Contact you on the same information</h6>
+        <h5>E-mail</h5>
+        <input name="email" (keyup)="contact.gender = $event.target.value" placeholder="E-mail">
+        <h5>Contact Number</h5>
+        <span style="display: flex; justify-content: space-between">
+            <input style="flex:10%;margin-right: 20px;" type="number" (keyup)="contact.name = $event.target.value" name="country_code" value="+91">
+            <input style="flex:60%;" name="number" type="number" (keyup)="contact.age = $event.target.value" placeholder="Number">
+        </span>
+    </div>
+
+    <button (click)="submit()">Submit Request</button>
+</section>

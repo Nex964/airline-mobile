@@ -1,0 +1,19 @@
+<section>
+
+    <h3>How it work?</h3>
+
+
+    <div class="container">
+        <div class="connect-line"></div>
+        <div *ngFor="let item of infoList">
+
+            <img [src]="item.src">
+            <div>
+                <h5>{{item.name}}</h5>
+                <h6>{{item.info}}</h6>
+            </div>
+
+        </div>
+    </div>
+
+</section>

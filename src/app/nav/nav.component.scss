@@ -1,0 +1,24 @@
+
+
+section{
+    background: linear-gradient(to right, #3A91F7, #39D9FF);
+    height: 120vh;
+    transition-duration: 1s;
+
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+        position: static;
+
+        h4{
+            color: #FFF;
+            margin-left: 10px;
+        }
+    }
+
+    &.collapse{
+        height: 23vh;
+    }
+}

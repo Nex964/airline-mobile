@@ -1,0 +1,11 @@
+<section id="list_dialog" class="">
+
+    <div class="itemList">
+
+        <h3 *ngFor="let item of list" (click)="select(item)">{{item.name}}</h3>
+
+    </div>
+
+    <i class="fas fa-times" (click)="hide()"></i>
+
+</section>

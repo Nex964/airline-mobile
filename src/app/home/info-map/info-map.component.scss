@@ -1,0 +1,65 @@
+
+
+section{
+    padding: 10vw;
+
+    h3{
+        color: #2C3E50;
+    }
+
+    .container{
+
+        margin-top: 6vh;
+        overflow: hidden;
+
+        .connect-line{
+            content:"";
+            position: absolute;
+            z-index: -1;
+            height: calc(14vh + (40px * 4));
+            left: 16vw;
+            border-left: 2px dotted #CED7D8; /*change these values to suit your liking*/
+        }
+
+        div{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 40px;
+
+            img{
+                width: 12vw;
+                margin-right: 6vw;
+            }
+
+            div{
+                display: flex;
+                height: 100%;
+                margin-bottom: 0;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: flex-start;
+
+                h5{
+                    color: #2C3E50;
+                }
+            }
+        }
+    }
+}
+
+/*
+
+    <h3>How it work?</h3>
+
+    <div *ngFor="let item of infoList">
+
+        <img [src]="item.src">
+        <div>
+            <h5>{{item.name}}</h5>
+            <h6>{{item.info}}</h6>
+        </div>
+
+    </div>
+
+*/

@@ -1,0 +1,10 @@
+<section>
+    <div class="selector-flights">
+        <span>
+            <i class="fas fa-plane-departure"></i>
+            <h4>Available flights</h4>
+        </span>
+    </div>
+
+    <app-flight-item *ngFor="let item of flights" [item]="item"></app-flight-item>
+</section>

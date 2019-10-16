@@ -1,0 +1,42 @@
+<section>
+
+    <div class="selector-destination">
+        <span>
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Available Destination</h4>
+        </span>
+
+        <div class="selector" >
+            <h4 id="fdest" (click)="showLocation($event, calDiv, 'fdest')">from</h4>
+            <i class="fas fa-chevron-down" (click)="showLocation($event, calDiv, 'fdest')"></i>
+
+            <div style="height: 3vh; width: 1px; background: #444444;"></div>
+
+            <h4 id="tdest" style="margin-left: 5px;" (click)="showLocation($event, calDiv, 'tdest')">to</h4>
+            <i class="fas fa-chevron-down" (click)="showLocation($event, calDiv, 'tdest')"></i>
+        </div>
+    </div>
+
+    <div #calDiv class="selector-date-cal" [style.display]="isSelectingDate == 1 ? 'block' : 'none'" >
+        <span>
+            <h4>Select Available Date</h4>
+        </span>
+
+        <div class="calendar-wrapper">
+            <mat-calendar #myCalendar [dateClass]="dateClass()" (selectedChange)="selectDate($event, dateText)"></mat-calendar>
+        </div>
+    </div>
+
+    <div class="selector-date" [style.display]="isSelectingDate == 2 ? 'block' : 'none'">
+        <span>
+            <i class="fas fa-calendar-day"></i>
+            <h4>Select Available Date</h4>
+        </span>
+
+        <div class="selector">
+            <h4 #dateText (click)="isSelectingDate = 1" >17 November 2019</h4>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+</section>

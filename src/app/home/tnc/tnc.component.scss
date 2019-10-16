@@ -1,0 +1,42 @@
+
+
+section{
+    padding: 20px;
+
+    h4{
+        color: #707070;
+        font-size: 3.5vw;
+        font-weight: 500;
+    }
+
+    div{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button{
+        background: #3A91F7;
+        border-radius: 1000px;
+        color: #FFF;
+        padding: 14px;
+        width: 48%;
+        font-size: 3.5vw;
+        letter-spacing: 1px;
+        box-shadow: 0px 3px 6px #00000018;
+        outline: none;
+        transition-duration: 0.4s;
+
+        &:hover{
+            box-shadow: 0px 3px 15px 4px #00000018;
+        }
+    }
+    .un{
+        border-radius: 1000px;
+        border: solid 2px #3A91F7;
+        color: #3A91F7;
+        background: #ECF0F1;
+        box-shadow: none;
+    }
+}

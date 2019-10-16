@@ -1,0 +1,71 @@
+<section>
+    <div class="master">
+        <div class="head">
+            <img src="assets/images/ic_flight.png">
+            <div>
+                <span>
+                    {{ startDate.toString().split(' ')[0] }},
+                    {{ startDate.toString().split(' ')[2] }}
+                    {{ startDate.toString().split(' ')[1] }}
+                </span>
+                <span>
+                    <h4>
+                        <!-- {{ item.source }}  -->
+                        DEL
+                    </h4>
+                    <h3>
+                        {{ item.landing }}
+                    </h3>
+                </span>
+                <span>
+                    <h5>Delhi</h5>
+                </span>
+            </div>
+            <div>
+                <h5>{{item.totalTime}}</h5>
+            </div>
+            <div>
+                <span>
+                    {{ endDate.toString().split(' ')[0] }},
+                    {{ endDate.toString().split(' ')[2] }}
+                    {{ endDate.toString().split(' ')[1] }}
+                </span>
+                <span>
+                    <h4>DEL </h4>
+                    <h3>
+                        {{ item.takeOff }}
+                    </h3>
+                </span>
+                <span>
+                    <h5>Mumbai</h5>
+                </span>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div>
+            <span>
+                <i class="fas fa-suitcase"></i>
+                <h4>Cabin : {{item.checkin.replace('kg', '')}} KG</h4>
+                <ul>
+                    <li>Check : {{item.baggage.replace('kg', '')}} KG</li>
+                </ul>
+            </span>
+            <span>
+                <h3>$ {{ item.rate }}</h3>
+            </span>
+        </div>
+        <div>
+            <span>
+                <i class="fas fa-utensils"></i>
+                <h4>Meal : {{ item.meal ? 'Yes' : 'No' }}</h4>
+            </span>
+            <span>
+                <h4 class="seats">3 Seats left</h4>
+            </span>
+            <div class="selector" (click)="showTravellersSelect()">
+                <h4 [id]="item._id">Select Travellers</h4>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </div>
+</section>
