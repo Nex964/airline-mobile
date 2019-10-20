@@ -10,7 +10,7 @@ export class TravellerDetailsComponent implements OnInit {
 
   list: Passenger[] = [];
 
-  contact: Passenger = {} as Passenger;
+  contact: Passenger = {gender: "", name: "+91", age: ""} as Passenger;
 
   item: FlightModel;
   startDate: Date = new Date();

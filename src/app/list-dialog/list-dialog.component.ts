@@ -39,7 +39,19 @@ export class ListDialogComponent implements OnInit {
       this.utils.getFlightBetween(fromId, toId, data => {
         this.utils.flightData = data;
       });
-    } else {
+    }
+    if(type == 'from'){
+      let fromId = item.value.split(',')[0];
+      let toId = item.value.split(',')[1];
+
+      this.utils.lastUsedAirport = fromId;
+
+      this.utils.getFlightBetween(fromId, toId, data => {
+        this.utils.flightData = data;
+        this.utils.flightDataSubject.next(data);
+      });
+    } 
+    else {
       this.utils.state.next(4);
       this.utils.travellers = item.value;
     }

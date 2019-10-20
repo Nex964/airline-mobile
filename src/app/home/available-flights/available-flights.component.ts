@@ -14,8 +14,8 @@ export class AvailableFlightsComponent implements OnInit {
 
   ngOnInit() {
 
-    let fromId = document.getElementById('fdest').getAttribute('value');
-    let toId = document.getElementById('tdest').getAttribute('value');
+    let fromId = document.getElementById('from').getAttribute('value').split(',')[0];
+    let toId = document.getElementById('from').getAttribute('value').split(',')[1];
 
     this.utils.getFlightBetween(fromId, toId, data => {
       this.flights = data.filter(e => {

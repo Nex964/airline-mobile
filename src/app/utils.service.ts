@@ -12,6 +12,8 @@ export class UtilsService {
   listData = new Subject<Param[]>();
   listDataType = 'dest'
 
+  flightDataSubject = new Subject<FlightModel[]>();
+
   flightData: FlightModel[] = [];
 
   selectedFlight: FlightModel;
@@ -97,6 +99,10 @@ export class UtilsService {
 
   getFlight(text: string, callback) {
     this.get([{ name: 'search', value: text } as Param], '/flight/search', data => callback(data));
+  }
+
+  getInitFlights(callback) {
+    this.get([], '/flight/init', data => callback(data));
   }
 
   getFlightBetween(from: string, to: string, callback) {
@@ -187,6 +193,7 @@ export interface FlightModel {
   stops: number;
   rate: string;
   source: string;
+  seats: string;
   dest: string;
   takeOff: string;
   landing: string;
@@ -235,4 +242,10 @@ export interface AddRequestModel {
   name: string;
   traveller: string;
   flight: string;
+}
+
+export interface FlightSelectorModel {
+  display: string;
+  src: string;
+  dest: string;
 }

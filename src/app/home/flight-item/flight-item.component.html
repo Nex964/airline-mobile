@@ -10,15 +10,16 @@
                 </span>
                 <span>
                     <h4>
-                        <!-- {{ item.source }}  -->
-                        DEL
+                        {{ item.source.code }} 
                     </h4>
                     <h3>
-                        {{ item.landing }}
+                        {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
                     </h3>
                 </span>
                 <span>
-                    <h5>Delhi</h5>
+                    <h5>
+                        {{ item.source.name }} 
+                    </h5>
                 </span>
             </div>
             <div>
@@ -31,13 +32,17 @@
                     {{ endDate.toString().split(' ')[1] }}
                 </span>
                 <span>
-                    <h4>DEL </h4>
+                    <h4>
+                        {{ item.dest.code }} 
+                    </h4>
                     <h3>
-                        {{ item.takeOff }}
+                        {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
                     </h3>
                 </span>
                 <span>
-                    <h5>Mumbai</h5>
+                    <h5>
+                        {{ item.dest.name }} 
+                    </h5>
                 </span>
             </div>
         </div>
@@ -55,12 +60,12 @@
             </span>
         </div>
         <div>
-            <span>
+            <span style="width: 40%">
                 <i class="fas fa-utensils"></i>
                 <h4>Meal : {{ item.meal ? 'Yes' : 'No' }}</h4>
             </span>
             <span>
-                <h4 class="seats">3 Seats left</h4>
+                <h4 class="seats">{{item.seats}} Seats left</h4>
             </span>
             <div class="selector" (click)="showTravellersSelect()">
                 <h4 [id]="item._id">Select Travellers</h4>

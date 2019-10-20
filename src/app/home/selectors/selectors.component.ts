@@ -23,23 +23,31 @@ export class SelectorsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.utils.flightDataSubject.subscribe(data => {
+      this.isSelectingDate = 1;
+    })
   }
 
   showLocation(event: any, calDiv: HTMLDivElement, id: string) {
-
-    this.isSelectingDate = 1;
-
     let list = [] as Param[];
 
-    this.utils.getAirport(data => {
+    // this.utils.getAirport(data => {
+    //   data.forEach(e => {
+    //     if (this.utils.lastUsedAirport == e._id) { return }
+    //     list.push({ name: e.code + '\n' + `(${e.city})`, value: e._id });
+    //   });
+
+    //   this.utils.setListData(list, id);
+
+
+    //   document.getElementById('list_dialog').classList.add('show');
+    // })
+
+    this.utils.getInitFlights(data => {
       data.forEach(e => {
-        if (this.utils.lastUsedAirport == e._id) { return }
-        list.push({ name: e.code + '\n' + `(${e.city})`, value: e._id });
-      });
-
-      this.utils.setListData(list, id);
-
-
+        list.push({name: e.display.replace("=>", "to"), value: e.src + ',' + e.dest});
+      })
+      this.utils.setListData(list, 'from')
       document.getElementById('list_dialog').classList.add('show');
     })
   }

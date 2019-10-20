@@ -9,13 +9,17 @@
                     {{ startDate.toString().split(' ')[1] }}
                 </span>
                 <span>
-                    <h4>BOM </h4>
+                    <h4>
+                        {{ item.source.code }} 
+                    </h4>
                     <h3>
-                        {{ item.landing }}
+                        {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
                     </h3>
                 </span>
                 <span>
-                    <h5>Delhi</h5>
+                    <h5>
+                        {{ item.source.name }} 
+                    </h5>
                 </span>
             </div>
             <div>
@@ -29,13 +33,17 @@
                     {{ endDate.toString().split(' ')[1] }}
                 </span>
                 <span>
-                    <h4>DEL </h4>
+                    <h4>
+                        {{ item.dest.code }} 
+                    </h4>
                     <h3>
-                        {{ item.takeOff }}
+                        {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
                     </h3>
                 </span>
                 <span>
-                    <h5>Mumbai</h5>
+                    <h5>
+                        {{ item.dest.name }} 
+                    </h5>
                 </span>
             </div>
         </div>
@@ -77,7 +85,7 @@
         <input name="email" (keyup)="contact.gender = $event.target.value" placeholder="E-mail">
         <h5>Contact Number</h5>
         <span style="display: flex; justify-content: space-between">
-            <input style="flex:10%;margin-right: 20px;" type="number" (keyup)="contact.name = $event.target.value" name="country_code" value="+91">
+            <input style="flex:10%;margin-right: 20px;" type="number" (keyup)="contact.name = $event.target.value" name="country_code" value="91">
             <input style="flex:60%;" name="number" type="number" (keyup)="contact.age = $event.target.value" placeholder="Number">
         </span>
     </div>
