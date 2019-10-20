@@ -28,7 +28,7 @@ export class SelectorsComponent implements OnInit {
     })
   }
 
-  showLocation(event: any, calDiv: HTMLDivElement, id: string) {
+  showLocation(event: any, id: string) {
     let list = [] as Param[];
 
     // this.utils.getAirport(data => {

@@ -192,9 +192,9 @@ export interface FlightModel {
   totalTime: string;
   stops: number;
   rate: string;
-  source: string;
+  source: AirportModel;
   seats: string;
-  dest: string;
+  dest: AirportModel;
   takeOff: string;
   landing: string;
   createdAt: Date;
