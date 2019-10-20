@@ -20,6 +20,7 @@ import { CongoComponent } from './congo/congo.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MTicketComponent } from './home/m-ticket/m-ticket.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     AvailableFlightsComponent,
     TncComponent,
     TravellerDetailsComponent,
-    CongoComponent
+    CongoComponent,
+    MTicketComponent
   ],
   imports: [
     BrowserModule,
