@@ -27,3 +27,29 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.row{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.col{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.ok{
+  background: #27AE60;
+  color: #FFF;
+}
+
+.danger{
+  background: #FE5F55;
+  color: #FFF;
+}
+
+.cool{
+  background: #3A91F7;
+  color: #FFF;
+}

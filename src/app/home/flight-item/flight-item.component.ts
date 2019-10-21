@@ -32,7 +32,7 @@ export class FlightItemComponent implements OnInit {
 
     let list = [] as Param[];
 
-    for(let i = 1; i <= parseInt(this.item.seats); i++){
+    for(let i = 1; i <= Math.min(parseInt(this.item.seats), 6); i++){
       list.push({ name: i.toString(), value: i.toString()})
     }
 

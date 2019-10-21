@@ -1,1 +1,169 @@
-<p>m-ticket works!</p>
+<section>
+
+    <div class="headings row">
+        <img src="assets/trip_ic.png">
+        <h4>{{
+            status 
+        }}</h4>
+    </div>
+
+    <div class="master" *ngIf="item">
+
+        <div class="row airline">
+            <img src="assets/images/ic_flight.png">
+            <div class="col">
+                <h4>{{item.name}}</h4>
+                <h5>{{item.number}}</h5>
+            </div>
+        </div>
+        <div class="head">
+            <div>
+                <span>
+                    {{ startDate.toString().split(' ')[0] }},
+                    {{ startDate.toString().split(' ')[2] }}
+                    {{ startDate.toString().split(' ')[1] }}
+                    <!-- Date -->
+                </span>
+                <span>
+                    <h4>
+                        {{ item.source.code }}
+                        <!-- Code -->
+                    </h4>
+                    <h3>
+                        {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
+                        <!-- Landing -->
+                    </h3>
+                </span>
+                <span>
+                    <h5>
+                        {{ item.source.name }}
+                        <!-- Name -->
+                    </h5>
+                </span>
+            </div>
+            <div>
+                <h5>{{item.totalTime}}</h5>
+                <!-- <h5>ETA</h5> -->
+            </div>
+            <div>
+                <span>
+                    <!-- Date -->
+                    {{ endDate.toString().split(' ')[0] }},
+                    {{ endDate.toString().split(' ')[2] }}
+                    {{ endDate.toString().split(' ')[1] }}
+                </span>
+                <span>
+                    <h4>
+                        {{ item.dest.code }}
+                        <!-- Code -->
+                    </h4>
+                    <h3>
+                        {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
+                        <!-- TakeOff -->
+                    </h3>
+                </span>
+                <span>
+                    <h5>
+                        {{ item.dest.name }}
+                        <!-- Name -->
+                    </h5>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" *ngIf="list">
+        <div class="header row">
+            <h4>PASSENGER NAME</h4>
+            <h4>PNR</h4>
+            <h4>E-TICKET NO.</h4>
+            <h4>SEAT</h4>
+        </div>
+
+        <div class="list row" *ngFor="let l of list">
+            <h4>{{l.name}}</h4>
+            <h4>{{data.pnr}}</h4>
+            <h4>E-TICKET NO.</h4>
+            <h4>SEAT</h4>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header row">
+            <h4>BAGGAGE INFORMATION</h4>
+            <h4>Sector</h4>
+            <h4>Cabin</h4>
+            <h4>Check-in</h4>
+        </div>
+
+        <div class="list row" *ngFor="let l of list">
+            <h4>{{l.name}}</h4>
+            <h4>PNR</h4>
+            <h4>{{item.baggage}}</h4>
+            <h4>{{item.checkin}}</h4>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="header row">
+            <h3>IMPORTANT INFORMATION</h3>
+        </div>
+
+        <div class="list">
+            <h4>• Check-in Time : Check-in desks will close 1 hour
+                before departure. <br>
+                • Valid ID proof needed : Carry a valid photo
+                identification proof (Driver Licence, Aadhar Card, Pan
+                Card or any other Government recognised photo
+                identification) <br>
+                • Web Check-in (opens 48 hrs. before departure)
+                :Spicejet - Use PNR and last name only. <br>
+                • To Cancel or Modify this booking, visit:
+                <a>http: //support.Mytrippartner.com </a><br>
+                • You have paid: INR 3,154  <br></h4>
+        </div>
+
+        <div class="header row">
+            <h3>CANCELLATION AND DATE CHANGE CHARGES</h3>
+        </div>
+
+        <div class="list">
+            <h4>• Check-in Time : Check-in desks will close 1 hour
+                before departure.<br>
+                • Valid ID proof needed : Carry a valid photo
+                identification proof (Driver Licence, Aadhar Card, Pan
+                Card or any other Government recognised photo
+                identification)<br>
+                • Web Check-in (opens 48 hrs. before departure)
+                :Spicejet - Use PNR and last name only.<br>
+                • To Cancel or Modify this booking, visit:
+                <a>http: //support.Mytrippartner.com</a><br>
+                • You have paid: INR 3,154 </h4>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header row">
+            <h3>24x7 CUSTOMER SUPPORT</h3>
+        </div>
+
+        <div class="list col">
+            <div class="row">
+                <h4>Tel</h4>
+                <div class="col">
+                    <h4>18001028747 (India toll free)</h4>
+                    <h4>+911244628747 (India)</h4>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Airline Support</h4>
+                <div class="col">
+                    <h4>18602100999,912262732111</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

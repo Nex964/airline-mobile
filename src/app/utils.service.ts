@@ -75,7 +75,7 @@ export class UtilsService {
       params = params.append(e.name, e.value);
     });
     // TODO: Show Loading
-    this.http.get<CommonResp>(this.baseUrl + url,  {'params': params}).subscribe(data => {
+    this.http.get<CommonResp>(this.baseUrl + url, { 'params': params }).subscribe(data => {
       // TODO: Hide Loading
       if (data.success == 1) { callback(data.data); }
       // else { alert("Error: " + data.message); }
@@ -121,6 +121,10 @@ export class UtilsService {
 
   createRequest(req: AddRequestModel, callback) {
     this.post(req, '/request', data => callback(data));
+  }
+
+  getRequestById(id: string, callback) {
+    this.get([], `/request/${id}`, data => callback(data));
   }
 
   getPolicies(callback) {
@@ -249,3 +253,31 @@ export interface FlightSelectorModel {
   src: string;
   dest: string;
 }
+
+export interface Traveller {
+  contact: Contact;
+  requests: any[];
+  seats: number;
+  amount: number;
+  status: number;
+  _id: string;
+  name: string;
+  flight: FlightModel;
+  passengers: Passenger[];
+  createdAt: Date;
+  updatedAt: Date;
+  __v: number;
+}
+
+export interface RequestModel {
+  pnr: string;
+  status: number;
+  _id: string;
+  name: string;
+  traveller: Traveller;
+  createdAt: Date;
+  updatedAt: Date;
+  requestId: number;
+  __v: number;
+}
+
