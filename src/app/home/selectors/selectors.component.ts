@@ -17,6 +17,7 @@ export class SelectorsComponent implements OnInit {
 
   isSelectingDate = 0;
   lastUsedAirport = '';
+  priceList = [];
 
   constructor(private utils: UtilsService) {
     this.currentDate = new Date();
@@ -53,6 +54,7 @@ export class SelectorsComponent implements OnInit {
   }
 
   selectDate(e: any, date: HTMLHeadingElement) {
+    // document.getElementsByClassName('special-date')[0].childNodes[0].innerText;
 
     let isAvail = false
     let d = new Date(e.toString())
@@ -86,8 +88,28 @@ export class SelectorsComponent implements OnInit {
         let newDate = new Date(e.startDate.split('T')[0]);
         newDate.setHours(0, 0, 0, 0);
 
+        setTimeout(() => {
+          if(date.getMonth() % 2 == 0 && date.getDate() == 30){
+            this.priceList = []
+            console.log("ended");
+            
+          }
+          if(date.getMonth() % 2 == 1 && date.getDate() == 31){
+            this.priceList = []
+            console.log("ended1");
+          }
+        }, 500);
+
         if (date.getTime() === newDate.getTime()) {
-          console.log("Found");
+
+          // document.getElementsByClassName('special-date')[0].childNodes[0].innerText;
+          this.priceList.push(e.rate);
+          let index = this.priceList.length - 1;
+          let price = e.rate;
+          setTimeout(() => {
+            let val = document.getElementsByClassName('special-date')[index].childNodes[0].textContent;
+            document.getElementsByClassName('special-date')[index].childNodes[0].textContent = val + ' ' + price;
+          }, 300);
           return 'special-date';
         }
       }

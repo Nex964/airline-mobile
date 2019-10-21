@@ -120,6 +120,8 @@ section{
       font-weight: 500 !important;
     }
   }
+
+  $sizes: 'nice', 'dice';
   
   .calendar-wrapper {
     ::ng-deep .mat-calendar-body-cell-content {
