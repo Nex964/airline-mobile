@@ -29,6 +29,15 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  process() {
+    if(this.utils.travellers != 0){
+      this.utils.state.next(4);
+    }
+    else{
+      alert('Select Travellers');
+    }
+  }
+
   dateClass() {
     return (date: Date): MatCalendarCellCssClasses => {
       for(let i = 0; i < this.utils.flightData.length; i++) {

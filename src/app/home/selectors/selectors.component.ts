@@ -108,7 +108,8 @@ export class SelectorsComponent implements OnInit {
           let price = e.rate;
           setTimeout(() => {
             let val = document.getElementsByClassName('special-date')[index].childNodes[0].textContent;
-            document.getElementsByClassName('special-date')[index].childNodes[0].textContent = val + ' ' + price;
+            // let h = new HTMLHeadingElement();
+            (document.getElementsByClassName('special-date')[index].childNodes[0] as HTMLDivElement).innerHTML = val + '<br> <h6>' + price + '</h6>';
           }, 300);
           return 'special-date';
         }

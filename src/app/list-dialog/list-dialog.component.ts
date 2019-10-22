@@ -52,7 +52,7 @@ export class ListDialogComponent implements OnInit {
       });
     } 
     else {
-      this.utils.state.next(4);
+      // this.utils.state.next(4);
       this.utils.travellers = item.value;
     }
 

@@ -17,14 +17,21 @@ export class FlightItemComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.item);
+    this.startDate.setDate(parseInt(this.item.startDate.split('-')[2].split('T')[0]));
+    this.startDate.setMonth(parseInt(this.item.startDate.split('-')[1]) - 1);
+    this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[0]));
 
-    this.startDate.setDate(parseInt(this.item.startDate.split('-')[1]));
-    this.startDate.setMonth(parseInt(this.item.startDate.split('-')[0]) - 1);
-    this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[2]));
+    this.endDate.setDate(parseInt(this.item.endDate.split('-')[2].split('T')[0]));
+    this.endDate.setMonth(parseInt(this.item.endDate.split('-')[1]) - 1);
+    this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[0]));
 
-    this.endDate.setDate(parseInt(this.item.endDate.split('-')[1]));
-    this.endDate.setMonth(parseInt(this.item.endDate.split('-')[0]) - 1);
-    this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[2]));
+    // this.startDate.setDate(parseInt(this.item.startDate.split('-')[1]));
+    // this.startDate.setMonth(parseInt(this.item.startDate.split('-')[0]) - 1);
+    // this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[2]));
+
+    // this.endDate.setDate(parseInt(this.item.endDate.split('-')[1]));
+    // this.endDate.setMonth(parseInt(this.item.endDate.split('-')[0]) - 1);
+    // this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[2]));
   }
 
 

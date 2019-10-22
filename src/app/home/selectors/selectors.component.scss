@@ -138,6 +138,14 @@ section{
   
       ::ng-deep .mat-calendar-body-cell-content{
         color: #FFF;
+        display: flex;
+        flex-direction: column;
+
+        ::ng-deep h6{
+          font-size: 2.6vw;
+          font-weight: 500;
+          margin-top: 8px
+        }
       }
     }
   

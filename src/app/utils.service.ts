@@ -27,6 +27,7 @@ export class UtilsService {
   selectedDate = new Date();
 
   lastUsedAirport = '';
+  lastTraveller = '';
 
   private baseUrl = 'https://mobile.mytrippartner.com/apis/v1';
 
@@ -43,6 +44,14 @@ export class UtilsService {
   setListData(data: Param[], type: string) {
     this.listDataType = type;
     this.listData.next(data);
+
+    try{
+      document.getElementById(this.lastTraveller).textContent = "Select Travellers";
+    }catch(e){}
+
+    if(type != 'from'){
+      this.lastTraveller = type;
+    }
   }
 
   getState() {

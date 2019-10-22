@@ -25,13 +25,22 @@ export class TravellerDetailsComponent implements OnInit {
       this.list[i] = { gender: 'Mrs.', name: '', age: '' } as Passenger;
     }
 
-    this.startDate.setDate(parseInt(this.item.startDate.split('-')[1]));
-    this.startDate.setMonth(parseInt(this.item.startDate.split('-')[0]) - 1);
-    this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[2]));
 
-    this.endDate.setDate(parseInt(this.item.endDate.split('-')[1]));
-    this.endDate.setMonth(parseInt(this.item.endDate.split('-')[0]) - 1);
-    this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[2]));
+    this.startDate.setDate(parseInt(this.item.startDate.split('-')[2].split('T')[0]));
+    this.startDate.setMonth(parseInt(this.item.startDate.split('-')[1]) - 1);
+    this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[0]));
+
+    this.endDate.setDate(parseInt(this.item.endDate.split('-')[2].split('T')[0]));
+    this.endDate.setMonth(parseInt(this.item.endDate.split('-')[1]) - 1);
+    this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[0]));
+
+    // this.startDate.setDate(parseInt(this.item.startDate.split('-')[1]));
+    // this.startDate.setMonth(parseInt(this.item.startDate.split('-')[0]) - 1);
+    // this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[2]));
+
+    // this.endDate.setDate(parseInt(this.item.endDate.split('-')[1]));
+    // this.endDate.setMonth(parseInt(this.item.endDate.split('-')[0]) - 1);
+    // this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[2]));
   }
 
   ngOnInit() { }
