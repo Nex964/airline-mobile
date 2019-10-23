@@ -38,7 +38,7 @@ section{
         }
     }
 
-    .selector-date{        
+    .selector-date{
         width: calc(100% - 40px);
         margin-top: 20px;
         span{
@@ -70,7 +70,7 @@ section{
         }
     }
 
-    .selector-flights{        
+    .selector-flights{
         margin-top: 20px;
         span{
             width: calc(100% - 40px);
@@ -115,14 +115,14 @@ section{
     padding: 20px;
     margin-left: -20px;
     width: calc(100%);
-  
+
     .mat-calendar-content .mat-calendar-table .mat-calendar-table-header tr th {
       font-weight: 500 !important;
     }
   }
 
   $sizes: 'nice', 'dice';
-  
+
   .calendar-wrapper {
     ::ng-deep .mat-calendar-body-cell-content {
       color: rgba(0, 0, 0, 0.87);
@@ -131,11 +131,11 @@ section{
       border-radius: 10px !important;
       border-color: #ffffff;
     }
-  
+
     ::ng-deep .special-date {
       background-color: #3a91f7;
       border-radius: 10px;
-  
+
       ::ng-deep .mat-calendar-body-cell-content{
         color: #FFF;
         display: flex;
@@ -143,32 +143,32 @@ section{
         padding: 10px;
 
         ::ng-deep h6{
-          font-size: 2.6vw;
+          font-size: 2.4vw;
           font-weight: 500;
           margin-top: 8px
         }
       }
     }
-  
+
     ::ng-deep .mat-calendar-period-button.mat-button-base {
       background: none;
-  
+
       ::ng-deep .mat-button-wrapper {
         font-weight: 600;
         font-size: 4vw;
       }
     }
-  
+
     ::ng-deep .mat-calendar-table-header-divider {
       padding: 0 !important;
     }
-  
+
     ::ng-deep .mat-icon-button.mat-button-base {
       border-radius: 10px;
       background: none;
       border: solid 1px #3a91f7;
     }
-  
+
     ::ng-deep .mat-calendar-body-label {
       // color: rgb(255, 255, 255);
       visibility: hidden;
@@ -177,44 +177,43 @@ section{
       font-size: 4vw;
       font-weight: 700;
     }
-  
+
     ::ng-deep .mat-calendar-table-header {
       color: rgb(0, 0, 0);
       font-weight: 600 !important;
     }
-  
+
     ::ng-deep .mat-calendar-table {
       border-spacing: 5px;
       border-collapse: separate;
       width: 100%;
     }
-  
+
     ::ng-deep .custom-date-class {
       background: #534fff;
       border-radius: 6%;
     }
-  
+
     ::ng-deep .mat-calendar-body-today.mat-calendar-body-selected {
       box-shadow: none !important;
     }
-  
+
     ::ng-deep .mat-calendar-body-selected {
       background-color: #ecf0f1;
       color: #3a91f7;
       border-radius: 5px !important;
     }
-  
+
     ::ng-deep .custom-date-class {
       background: linear-gradient(to left bottom, #e83f94, #f54e5e);
       border-radius: 6%;
     }
-  
+
     ::ng-deep .mat-calendar-body-cell-content {
     }
   }
-  
+
   .custom-date-class {
     background: linear-gradient(to left bottom, #e83f94, #f54e5e) !important;
     border-radius: 100%;
   }
-  
