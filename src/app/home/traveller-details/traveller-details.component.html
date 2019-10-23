@@ -70,9 +70,9 @@
                 <h4>{{list.indexOf(item) + 1}} Traveller</h4>
                 <input #meal class="small" [matAutocomplete]="meal" value="{{item.gender}}">
                 <mat-autocomplete #meal="matAutocomplete">
-                    <mat-option (click)="item.gender = 'Ms.'" value="Mr.">Mr.</mat-option>
-                    <mat-option (click)="item.gender = 'Mrs.'" value="Mrs.">Mrs.</mat-option>
-                    <mat-option (click)="item.gender = 'Ms.'" value="Ms.">Ms.</mat-option>
+                    <mat-option (click)="item.gender = 'male'" value="male">Male</mat-option>
+                    <mat-option (click)="item.gender = 'female'" value="female">Female</mat-option>
+                    <mat-option (click)="item.gender = 'other'" value="other">Other</mat-option>
                 </mat-autocomplete>
                 <!-- <i class="fas fa-chevron-down"></i> -->
             <!-- </div> -->
