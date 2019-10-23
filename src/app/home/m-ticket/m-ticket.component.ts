@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Passenger, FlightModel, UtilsService, AddTravellerRequest, Contact, AddRequestModel, RequestModel } from 'src/app/utils.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-m-ticket',
@@ -19,9 +20,9 @@ export class MTicketComponent implements OnInit {
   data: RequestModel;
   status = '';
 
-  constructor(private utils: UtilsService) {
+  constructor(private utils: UtilsService, private router: Router) {
 
-    this.utils.getRequestById('0', data => {
+    this.utils.getRequestById(this.router.url.split('/')[this.router.url.split('/').length - 1], data => {
       data = (data[0] as RequestModel);
 
       this.data = data;

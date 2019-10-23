@@ -6,7 +6,7 @@ import { MTicketComponent } from './home/m-ticket/m-ticket.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'ticket', component: MTicketComponent}
+  {path: 'ticket/:id', component: MTicketComponent}
 ];
 
 @NgModule({
