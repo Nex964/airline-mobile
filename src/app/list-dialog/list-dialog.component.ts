@@ -55,7 +55,6 @@ export class ListDialogComponent implements OnInit {
       // this.utils.state.next(4);
       this.utils.travellers = item.value;
     }
-
     this.hide();
   }
 

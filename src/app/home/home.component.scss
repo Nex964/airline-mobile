@@ -6,6 +6,9 @@ section {
   transform: translate(0, -10vh);
   background: #fff;
 }
+.move{
+  transform: translate(0, -10vh) !important;
+}
 
 .selector-date-cal {
   // width: calc(100% - 40px);
