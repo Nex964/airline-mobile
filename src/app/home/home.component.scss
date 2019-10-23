@@ -23,10 +23,9 @@ section {
 .calendar-wrapper {
   ::ng-deep .mat-calendar-body-cell-content {
     color: rgba(0, 0, 0, 0.87);
-    border: none;
-    font-weight: 600;
-    border-radius: 10px !important;
-    border-color: #ffffff;
+    font-weight: 200;
+    border-radius: 18px !important;
+    border: none #ffffff;
   }
 
   ::ng-deep .special-date {

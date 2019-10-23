@@ -10,7 +10,7 @@
                 </span>
                 <span>
                     <h4>
-                        {{ item.source.code }} 
+                        {{ item.source.code }}
                     </h4>
                     <h3>
                         {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
@@ -18,7 +18,7 @@
                 </span>
                 <span>
                     <h5>
-                        {{ item.source.name }} 
+                        {{ item.source.name }}
                     </h5>
                 </span>
             </div>
@@ -34,7 +34,7 @@
                 </span>
                 <span>
                     <h4>
-                        {{ item.dest.code }} 
+                        {{ item.dest.code }}
                     </h4>
                     <h3>
                         {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
@@ -42,7 +42,7 @@
                 </span>
                 <span>
                     <h5>
-                        {{ item.dest.name }} 
+                        {{ item.dest.name }}
                     </h5>
                 </span>
             </div>
@@ -70,6 +70,7 @@
                 <h4>{{list.indexOf(item) + 1}} Traveller</h4>
                 <input #meal class="small" [matAutocomplete]="meal" value="{{item.gender}}">
                 <mat-autocomplete #meal="matAutocomplete">
+                    <mat-option (click)="item.gender = 'Ms.'" value="Mr.">Mr.</mat-option>
                     <mat-option (click)="item.gender = 'Mrs.'" value="Mrs.">Mrs.</mat-option>
                     <mat-option (click)="item.gender = 'Ms.'" value="Ms.">Ms.</mat-option>
                 </mat-autocomplete>

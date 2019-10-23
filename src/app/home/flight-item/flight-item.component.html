@@ -10,7 +10,7 @@
                 </span>
                 <span>
                     <h4>
-                        {{ item.source.code }} 
+                        {{ item.source.code }}
                     </h4>
                     <h3>
                         {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
@@ -18,7 +18,7 @@
                 </span>
                 <span>
                     <h5>
-                        {{ item.source.name }} 
+                        {{ item.source.name }}
                     </h5>
                 </span>
             </div>
@@ -33,7 +33,7 @@
                 </span>
                 <span>
                     <h4>
-                        {{ item.dest.code }} 
+                        {{ item.dest.code }}
                     </h4>
                     <h3>
                         {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
@@ -41,7 +41,7 @@
                 </span>
                 <span>
                     <h5>
-                        {{ item.dest.name }} 
+                        {{ item.dest.name }}
                     </h5>
                 </span>
             </div>
@@ -50,12 +50,12 @@
         <div>
             <span>
                 <i class="fas fa-suitcase"></i>
-                <h4>Cabin : {{item.checkin.replace('kg', '')}} KG</h4>
+                <h6>Checkin : {{item.checkin.replace('kg', '')}} KG</h6>
                 <ul>
-                    <li>Check : {{item.baggage.replace('kg', '')}} KG</li>
+                  <li><h5>Baggage : {{item.baggage.replace('kg', '')}} KG</h5></li>
                 </ul>
             </span>
-            <span>
+          <span>
                 <h3>₹ {{ item.rate }}</h3>
             </span>
         </div>
