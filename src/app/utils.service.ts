@@ -60,6 +60,7 @@ export class UtilsService {
 
   setState(val: number) {
     this.state.next(val);
+    window.scrollTo(500, 0);
   }
 
   getShowFlight(): Subject<boolean> {

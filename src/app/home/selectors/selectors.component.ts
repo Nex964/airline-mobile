@@ -25,7 +25,10 @@ export class SelectorsComponent implements OnInit {
 
   ngOnInit() {
     this.utils.flightDataSubject.subscribe(data => {
-      this.isSelectingDate = 1;
+      this.isSelectingDate = 0;
+      setTimeout(() => {
+        this.isSelectingDate = 1;
+      }, 100);
     })
   }
 
