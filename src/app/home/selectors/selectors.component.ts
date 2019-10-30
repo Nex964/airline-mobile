@@ -18,9 +18,13 @@ export class SelectorsComponent implements OnInit {
   isSelectingDate = 0;
   lastUsedAirport = '';
   priceList = [];
+  locationList = [];
 
   constructor(private utils: UtilsService) {
     this.currentDate = new Date();
+    this.utils.getInitFlights(data => {
+      this.locationList = data;
+    })
   }
 
   ngOnInit() {
@@ -47,13 +51,12 @@ export class SelectorsComponent implements OnInit {
     //   document.getElementById('list_dialog').classList.add('show');
     // })
 
-    this.utils.getInitFlights(data => {
-      data.forEach(e => {
-        list.push({name: e.display.replace("=>", "to"), value: e.src + ',' + e.dest});
-      })
-      this.utils.setListData(list, 'from')
-      document.getElementById('list_dialog').classList.add('show');
+    this.locationList.forEach(e => {
+      list.push({name: e.display.replace("=>", "to"), value: e.src + ',' + e.dest});
     })
+    this.utils.setListData(list, 'from')
+    document.getElementById('list_dialog').classList.add('show');
+    
   }
 
   selectDate(e: any, date: HTMLHeadingElement) {
@@ -78,6 +81,10 @@ export class SelectorsComponent implements OnInit {
       e = e.toString();
       date.innerText = e.split(" ")[2] + " " + e.split(" ")[1] + " " + e.split(" ")[0];
       this.utils.state.next(3);
+
+      setTimeout(() => {
+        this.utils.load();
+      }, 300);
     }
     else {
       alert('No flights avilable on the date')

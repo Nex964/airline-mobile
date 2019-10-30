@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FlightModel, UtilsService, Passenger, Contact, AddTravellerRequest, AddRequestModel } from 'src/app/utils.service';
 
 @Component({
@@ -15,6 +15,8 @@ export class TravellerDetailsComponent implements OnInit {
   item: FlightModel;
   startDate: Date = new Date();
   endDate: Date = new Date();
+
+  @ViewChild('meal', {static: false}) auto;
 
   constructor(private utils: UtilsService) {
     this.item = this.utils.selectedFlight;

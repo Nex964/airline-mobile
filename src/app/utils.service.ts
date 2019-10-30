@@ -13,6 +13,7 @@ export class UtilsService {
   listDataType = 'dest'
 
   flightDataSubject = new Subject<FlightModel[]>();
+  availableFlights = new Subject<FlightModel[]>();
 
   flightData: FlightModel[] = [];
 
@@ -90,6 +91,32 @@ export class UtilsService {
       if (data.success == 1) { callback(data.data); }
       // else { alert("Error: " + data.message); }
     })
+  }
+
+  load(){
+
+    let fromId = document.getElementById('from').getAttribute('value').split(',')[0];
+    let toId = document.getElementById('from').getAttribute('value').split(',')[1];
+
+    this.getFlightBetween(fromId, toId, data => {
+      let flights = data.filter(e => {
+        console.log((e as FlightModel).startDate);
+
+        let d1 = new Date((e as FlightModel).startDate.split('T')[0]);
+        d1.setHours(0, 0, 0, 0);
+
+        if (this.selectedDate.getTime() == d1.getTime()) {
+
+          // console.log('selected', this.utils.selectedDate);
+          // console.log('checking', new Date((e as FlightModel).startDate));
+          return true;
+        }else {
+          return false;
+        }
+      });
+
+      this.availableFlights.next(flights);
+    });
   }
 
   addAirport(req: AddAirpotRequest) {

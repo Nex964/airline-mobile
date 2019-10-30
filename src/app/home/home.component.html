@@ -15,7 +15,7 @@
 
     <app-selectors *ngIf="state <= 3"></app-selectors>
 
-    <app-available-flights *ngIf="state >= 2 && state <= 3"></app-available-flights>
+    <app-available-flights #aFlight *ngIf="state >= 2 && state <= 3"></app-available-flights>
 
     <app-tnc *ngIf="state == 4"></app-tnc>
 

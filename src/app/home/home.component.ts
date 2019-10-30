@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UtilsService } from '../utils.service';
 import { MatCalendarCellCssClasses } from '@angular/material/datepicker/typings/calendar-body';
 
@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   state = 1
 
   price = 0
+
+  @ViewChild('aFlight', {static: false}) aFlight;
 
   constructor(private utils: UtilsService) { }
 
