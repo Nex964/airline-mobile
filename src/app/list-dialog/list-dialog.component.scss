@@ -7,12 +7,12 @@ section{
     opacity: 0;
     pointer-events: all;
     bottom: 0;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
 
     i{
         cursor: pointer;
         position: absolute;
-        top: calc(100vh - 64px);
+        top: calc(0vh + 64px);
         width: 16px;
         height: 16px;
         text-align: center;

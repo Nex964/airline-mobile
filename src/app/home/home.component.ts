@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   state = 1
 
-  price = 0
+  price = "0"
 
   @ViewChild('aFlight', {static: false}) aFlight;
 
@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
       this.state = data;
       if(data == 5){
         try{
-          this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate)
+          this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + " per)"
+
         }
         catch(e){}
       }
