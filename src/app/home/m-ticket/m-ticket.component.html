@@ -43,7 +43,7 @@
             </div>
             <div>
                 <h5>{{item.totalTime}}</h5>
-                <!-- <h5>ETA</h5> -->
+              <h5>{{item.stops==0?"Non-Stop":item.stops+" Stops"}}</h5>
             </div>
             <div>
                 <span>
@@ -84,8 +84,8 @@
         <div class="list row" *ngFor="let l of list">
             <h4>{{l.name}}</h4>
             <h4>{{data.pnr}}</h4>
-            <h4>E-TICKET NO.</h4>
-            <h4>SEAT</h4>
+            <h4>NA</h4>
+            <h4>NA</h4>
         </div>
     </div>
 
