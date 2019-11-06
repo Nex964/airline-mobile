@@ -3,15 +3,15 @@
     <div class="headings row">
         <img src="assets/trip_ic.png">
         <h4>{{
-            status 
+            status
         }}</h4>
     </div>
 
     <div class="master" *ngIf="item">
 
         <div class="row airline">
-            <img src="assets/images/ic_flight.png">
-            <div class="col">
+          <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
+          <div class="col">
                 <h4>{{item.name}}</h4>
                 <h5>{{item.number}}</h5>
             </div>

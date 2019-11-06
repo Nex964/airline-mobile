@@ -7,15 +7,16 @@ const app = express();
 // Serve only the static files form the dist directory
 // Replace the '/dist/<to_your_project_name>'
 app.use(express.static(__dirname + '/dist/web-test'));
-
+app.get('/ticket/:id', (req, res) => {
+  // console.log("got mticket req");
+  // Replace the '/dist/<to_your_project_name>/index.html'
+  res.sendFile(path.join(__dirname+ '/dist/web-test/index.html'));
+});
 app.get('/', function(req,res) {
   // Replace the '/dist/<to_your_project_name>/index.html'
   res.sendFile(path.join(__dirname+ '/dist/web-test/index.html'));
 });
-app.get('/ticket/:id', (req, res) => {
-  // Replace the '/dist/<to_your_project_name>/index.html'
-  res.sendFile(path.join(__dirname+ '/dist/web-test/index.html'));
-});
+
 // Start the app by listening on the default Heroku port
 // app.listen(process.env.PORT || 8080);
 var listener=app.listen(process.env.PORT || 4200, () => {

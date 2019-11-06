@@ -16,7 +16,7 @@ export class MTicketComponent implements OnInit {
   item: FlightModel;
   startDate: Date = new Date();
   endDate: Date = new Date();
-
+  image: string;
   data: RequestModel;
   status = '';
 
@@ -32,6 +32,7 @@ export class MTicketComponent implements OnInit {
       this.list = (data as RequestModel).traveller.passengers;
 
 
+
       if(data.status == '-1'){
         this.status = 'Pending'
       }
@@ -41,7 +42,7 @@ export class MTicketComponent implements OnInit {
       if(data.status == '1'){
         this.status = 'Confirmed'
       }
-
+      this.image= this.item.image
       this.startDate.setDate(parseInt(this.item.startDate.split('-')[1]));
       this.startDate.setMonth(parseInt(this.item.startDate.split('-')[0]) - 1);
       this.startDate.setFullYear(parseInt(this.item.startDate.split('-')[2]));
