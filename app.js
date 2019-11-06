@@ -8,7 +8,11 @@ const app = express();
 // Replace the '/dist/<to_your_project_name>'
 app.use(express.static(__dirname + '/dist/web-test'));
 
-app.get('*', function(req,res) {
+app.get('/', function(req,res) {
+  // Replace the '/dist/<to_your_project_name>/index.html'
+  res.sendFile(path.join(__dirname+ '/dist/web-test/index.html'));
+});
+app.get('/ticket/:id', (req, res) => {
   // Replace the '/dist/<to_your_project_name>/index.html'
   res.sendFile(path.join(__dirname+ '/dist/web-test/index.html'));
 });
