@@ -1,7 +1,7 @@
 <section>
     <div class="master">
         <div class="head">
-            <img src="assets/images/ic_flight.png">
+            <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
             <div>
                 <span>
                     {{ startDate.toString().split(' ')[0] }},

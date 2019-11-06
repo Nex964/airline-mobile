@@ -23,6 +23,6 @@ export class TncComponent implements OnInit {
   }
 
   degree() { 
-    this.utils.state.next(0);
+    this.utils.state.next(3);
   }
 }

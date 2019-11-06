@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FlightModel, UtilsService, Passenger, Contact, AddTravellerRequest, AddRequestModel } from 'src/app/utils.service';
+import { MatAutocompleteTrigger } from '@angular/material';
 
 @Component({
   selector: 'app-traveller-details',
@@ -16,7 +17,11 @@ export class TravellerDetailsComponent implements OnInit {
   startDate: Date = new Date();
   endDate: Date = new Date();
 
+  price = "0"
+
   @ViewChild('meal', {static: false}) auto;
+  @ViewChild(MatAutocompleteTrigger, {static: false, read: MatAutocompleteTrigger}) meal: MatAutocompleteTrigger;
+
 
   constructor(private utils: UtilsService) {
     this.item = this.utils.selectedFlight;
@@ -45,7 +50,15 @@ export class TravellerDetailsComponent implements OnInit {
     // this.endDate.setFullYear(parseInt(this.item.endDate.split('-')[2]));
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+    this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + "*" + this.utils.travellers + " passenger)"
+   }
+
+  open(){
+    
+    this.meal.openPanel();
+  }
 
   submit() {
 

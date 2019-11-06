@@ -11,24 +11,29 @@ export class InfoMapComponent implements OnInit {
 
   constructor() { 
     this.infoList.push({
-      src: "https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png",
-      name: "Nice",
-      info: "Nice, very nice, Expensive, Explosion"
+      src: "assets/1.png",
+      name: "Submit details",
+      info: "Enter all details, destination, date etc."
     } as InfoItem)
     this.infoList.push({
-      src: "https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png",
-      name: "Nice",
-      info: "Very Nice"
+      src: "assets/2.png",
+      name: "Details checking",
+      info: "Our executive will check availability of flight"
     } as InfoItem)
     this.infoList.push({
-      src: "https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png",
-      name: "Nice",
-      info: "Very Nice"
+      src: "assets/3.png",
+      name: "Confirmation Mail/Call",
+      info: "You will received confirmation mail or call."
     } as InfoItem)
     this.infoList.push({
-      src: "https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png",
-      name: "Nice",
-      info: "Very Nice"
+      src: "assets/4.png",
+      name: "Make payment",
+      info: "Make payment on given link in mail."
+    } as InfoItem)
+    this.infoList.push({
+      src: "assets/5.png",
+      name: "Ticket Successfully booked",
+      info: "And your ticket will be booked"
     } as InfoItem)
   }
 

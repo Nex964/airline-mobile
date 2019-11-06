@@ -24,8 +24,7 @@ export class HomeComponent implements OnInit {
       this.state = data;
       if(data == 5){
         try{
-          this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + " per)"
-
+          this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + "*" + this.utils.travellers + " passenger)"
         }
         catch(e){}
       }

@@ -68,7 +68,7 @@
         <div *ngFor="let item of list">
             <!-- <div class="selector"> -->
                 <h4>{{list.indexOf(item) + 1}} Traveller</h4>
-                <input #meal class="small" [matAutocomplete]="meal" value="{{item.gender}}">
+                <input #meal type="button" class="but" (click)="open" class="small" [matAutocomplete]="meal" value="{{item.gender}}">
                 <mat-autocomplete #meal="matAutocomplete">
                     <mat-option (click)="item.gender = 'Mr'" value="Mr">Mr</mat-option>
                     <mat-option (click)="item.gender = 'Ms'" value="Ms">Ms</mat-option>
@@ -86,9 +86,18 @@
         <input name="email" (keyup)="contact.gender = $event.target.value" placeholder="E-mail">
         <h5>Contact Number</h5>
         <span style="display: flex; justify-content: space-between">
-            <input style="flex:10%;margin-right: 20px;" type="number" (keyup)="contact.name = $event.target.value" name="country_code" value="91">
+            <input style="flex:10%;margin-right: 20px;" type="number" (keyup)="contact.name = $event.target.value" name="country_code" disabled="true" value="91">
             <input style="flex:60%;" name="number" type="number" (keyup)="contact.age = $event.target.value" placeholder="Number">
         </span>
+    </div>
+
+    <div class="traveller">
+        <div>
+            <h3>Total fare</h3>
+            <h4>₹{{price}}</h4>
+        </div>
+        <i class="fas fa-info-circle"></i>
+        <!-- <button>Submit Request</button> -->
     </div>
 
     <button (click)="submit()">Submit Request</button>

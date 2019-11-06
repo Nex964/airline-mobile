@@ -192,6 +192,16 @@ section {
       }
     }
 
+    .but{
+      background: #FFF;
+      width: 20%;
+    }
+
+    input[type=button]{
+      background: #FFF;
+      width: 20%;
+    }
+
     h6 {
       color: #2c3e50;
       font-size: 3vw;
@@ -231,6 +241,39 @@ button {
 
   div {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 3.4vw;
+      font-weight: 300;
+      color: #2c3e50;
+    }
+    h4 {
+      font-size: 3.6vw;
+      font-weight: 600;
+      color: #3a91f7;
+    }
+  }
+
+  i {
+    color: #94a5a6;
+    font-size: 6vw;
+  }
+}
+
+
+.traveller {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: calc(100vw - 40px);
+  padding: 20px;
+  align-items: center;
+  background: #FFF;
+
+  div {
+    width: 80%;
     display: flex;
     flex-direction: column;
 
