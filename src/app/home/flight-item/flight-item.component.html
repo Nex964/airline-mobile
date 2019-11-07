@@ -21,9 +21,9 @@
                         {{ item.source.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.takeOff.split(':')[0].length == 1 ? item.takeOff.split(':')[0] + '0' : item.takeOff.split(':')[0]
-                         }}:{{ 
+                         }}:{{
                              item.takeOff.split(':')[1].length == 1 ? item.takeOff.split(':')[1] + '0' : item.takeOff.split(':')[1]
                         }}
                     </h3>
@@ -42,6 +42,7 @@
                         item.stops == 0 ? 'Non-Stop' : item.stops
                     }}
                 </h5>
+              </ul>
             </div>
             <div>
                 <span>
@@ -54,9 +55,9 @@
                         {{ item.dest.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.landing.split(':')[0].length == 1 ? item.landing.split(':')[0] + '0' : item.landing.split(':')[0]
-                        }}:{{ 
+                        }}:{{
                             item.landing.split(':')[1].length == 1 ? item.landing.split(':')[1] + '0' : item.landing.split(':')[1]
                         }}
                     </h3>
