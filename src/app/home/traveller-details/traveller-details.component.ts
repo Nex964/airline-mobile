@@ -51,8 +51,7 @@ export class TravellerDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + "*" + this.utils.travellers + " passenger)"
+    this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + "x" + this.utils.travellers + " passenger)"
    }
 
   open(){

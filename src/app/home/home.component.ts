@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.utils.getState().subscribe(data => {
       this.state = data;
+
+      window.scroll(0,0);
+      console.log(this.state);
+
       if(data == 5){
         try{
           this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + "*" + this.utils.travellers + " passenger)"
