@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "buildppm": "ng build-prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "app": "nodemon app.js"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +27,8 @@
     "ng-pick-datetime": "^7.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "express": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",

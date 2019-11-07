@@ -233,6 +233,7 @@ export interface FlightModel {
   startDate: string;
   endDate: string;
   totalTime: string;
+  image: string;
   stops: number;
   rate: string;
   source: AirportModel;
