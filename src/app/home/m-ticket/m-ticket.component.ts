@@ -20,10 +20,18 @@ export class MTicketComponent implements OnInit {
   data: RequestModel;
   status = '';
 
+  info = '';
+
   constructor(private utils: UtilsService, private router: Router) {
+    this.utils.getPolicies(data => {
+      this.info = data;
+    });
 
     this.utils.getRequestById(this.router.url.split('/')[this.router.url.split('/').length - 1], data => {
       data = (data[0] as RequestModel);
+
+      console.log(data[0]);
+      
 
       this.data = data;
 

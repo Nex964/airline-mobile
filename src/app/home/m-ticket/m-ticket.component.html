@@ -2,9 +2,16 @@
 
     <div class="headings row">
         <img src="assets/trip_ic.png">
-        <h4>{{
-            status 
-        }}</h4>
+        <div class="col">
+            <!-- <h4 *ngIf="status == -1" class="rans">Booking Status:</h4>
+            <h4 *ngIf="status == -1" style="text-align: center"> {{ status }}</h4>
+            <h4 *ngIf="status == 1" class="rans"> PNR:</h4>
+            <h4 *ngIf="status == 1" style="text-align: center"> {{ item.pnr }}</h4>
+            <h4 *ngIf="status == 2" class="rans">Booking Status:</h4>
+            <h4 *ngIf="status == 2" style="text-align: center"> {{ item.pnr }}</h4> -->
+            <h4  class="rans">Booking Status:</h4>
+            <h4 style="text-align: center"> {{ status }}</h4>
+        </div>
     </div>
 
     <div class="master" *ngIf="item">
@@ -121,11 +128,12 @@
 
     <div class="container">
         <div class="header row">
-            <h3>IMPORTANT INFORMATION</h3>
+            <h3>SPECIAL TERMS AND CONDITION</h3>
         </div>
 
         <div class="list">
-            <h4>• Check-in Time : Check-in desks will close 1 hour
+            <h4>{{info}}</h4>
+            <!-- <h4>• Check-in Time : Check-in desks will close 1 hour
                 before departure. <br>
                 • Valid ID proof needed : Carry a valid photo
                 identification proof (Driver Licence, Aadhar Card, Pan
@@ -135,10 +143,10 @@
                 :Spicejet - Use PNR and last name only. <br>
                 • To Cancel or Modify this booking, visit:
                 <a>http: //support.Mytrippartner.com </a><br>
-                • You have paid: INR 3,154  <br></h4>
+                • You have paid: INR 3,154  <br></h4> -->
         </div>
 
-        <div class="header row">
+        <!-- <div class="header row">
             <h3>CANCELLATION AND DATE CHANGE CHARGES</h3>
         </div>
 
@@ -148,28 +156,35 @@
                 b) Adult  After departure 2 hrs - 365 days  cancellation 
                 charges of airline : 3000 & Mytrippartner : 300
             </h4>
-        </div>
+        </div> -->
     </div>
 
     <div class="container">
         <div class="header row">
-            <h3>24x7 CUSTOMER SUPPORT</h3>
+            <h3>CUSTOMER SUPPORT</h3>
         </div>
 
         <div class="list col">
             <div class="row">
-                <h4>Tel</h4>
+                <h4>Contact Number</h4>
                 <div class="col">
-                    <h4>18001028747 (India toll free)</h4>
-                    <h4>+911244628747 (India)</h4>
+                    <h4>9343321811/9900275427 (Mon-Sat 10am-7pm)</h4>
+                    <!-- <h4>+911244628747 (India)</h4> -->
                 </div>
             </div>
+        <div class="list col">
             <div class="row">
+                <h4>Email</h4>
+                <div class="col">
+                    <h4> sales@mytrippartner.com (24*7)</h4>
+                </div>
+            </div>
+            <!-- <div class="row">
                 <h4>Airline Support</h4>
                 <div class="col">
                     <h4>18602100999,912262732111</h4>
-                </div>
-            </div>
+                </div> -->
+            </div> 
         </div>
     </div>
 

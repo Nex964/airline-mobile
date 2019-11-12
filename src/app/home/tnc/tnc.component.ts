@@ -17,7 +17,7 @@ export class TncComponent implements OnInit {
   }
 
   ngOnInit() {}
-
+  
   agree() {
     this.utils.state.next(5);
   }
