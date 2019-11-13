@@ -56,7 +56,7 @@
                 <h5>{{item.totalTime}}</h5>
                 <h5>
                     {{
-                        item.stops == 0 ? 'Non-Stop' : item.stops
+                        item.stops == 0 ? 'Non-Stop' : item.stops + " stops"
                     }}
                 </h5>
                 <!-- <h5>ETA</h5> -->
@@ -119,7 +119,7 @@
 
         <div class="list row" *ngFor="let l of list">
             <h4>{{l.name}}</h4>
-            <h4>N/A</h4>
+            <h4>{{ item.source.code }} to {{ item.dest.code }}</h4>
             <h4>{{item.baggage}}</h4>
             <h4>{{item.checkin}}</h4>
         </div>
