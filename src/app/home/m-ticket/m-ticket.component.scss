@@ -45,6 +45,7 @@ section {
         height: 40vh;
         background: #0000;
         border: none;
+        outline: none;
       }
 
       &.row{
@@ -88,7 +89,7 @@ section {
 
     img {
       width: auto;
-      height: 4vh;
+      height: 6vh;
     }
 
     h4 {
