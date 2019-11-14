@@ -36,8 +36,20 @@ section {
       border-top: solid 0.1px #CED7D8;
       justify-content: space-between;
 
+      textarea {
+        width: calc(100% - 40px);
+        text-align: start;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        height: 40vh;
+        background: #0000;
+        border: none;
+      }
+
       &.row{
         margin: 20px;
+
         h4{
           width: 100%;
           text-align: center;
