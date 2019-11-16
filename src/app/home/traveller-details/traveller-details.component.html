@@ -8,7 +8,7 @@
                     {{ item.number }}
                 </h4>
             </div>
-    
+
             <div>
                 <span>
                     {{ startDate.toString().split(' ')[0] }},
@@ -20,9 +20,9 @@
                         {{ item.source.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.takeOff.split(':')[0].length == 1 ? item.takeOff.split(':')[0] + '0' : item.takeOff.split(':')[0]
-                        }}:{{ 
+                        }}:{{
                             item.takeOff.split(':')[1].length == 1 ? item.takeOff.split(':')[1] + '0' : item.takeOff.split(':')[1]
                         }}
                     </h3>
@@ -53,9 +53,9 @@
                         {{ item.dest.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.landing.split(':')[0].length == 1 ? item.landing.split(':')[0] + '0' : item.landing.split(':')[0]
-                        }}:{{ 
+                        }}:{{
                             item.landing.split(':')[1].length == 1 ? item.landing.split(':')[1] + '0' : item.landing.split(':')[1]
                         }}
                     </h3>
@@ -71,9 +71,9 @@
         <div>
             <span>
                 <i class="fas fa-suitcase"></i>
-                <h4>Cabin : {{item.checkin.replace('kg', '')}} KG</h4>
+                <h4>CheckIn : {{item.checkin.replace('kg', '')}} KG</h4>
                 <ul>
-                    <li>Check : {{item.baggage.replace('kg', '')}} KG</li>
+                    <li>Baggage : {{item.baggage.replace('kg', '')}} KG</li>
                 </ul>
             </span>
             <span>
