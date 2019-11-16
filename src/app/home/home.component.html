@@ -1,16 +1,16 @@
 <section>
 
     <div class="bottom-bar">
-        <button *ngIf="state >= 2 && state <= 3" (click)="process()">Proceed</button>
+        <button *ngIf="state >= 2 && state <= 3" style="z-index: 1000;" (click)="process()">Proceed</button>
 
-        <div *ngIf="state == 5" class="traveller">
+        <!-- <div *ngIf="state == 5" class="traveller">
             <div>
                 <h3>Total fare</h3>
                 <h4>₹{{price}}</h4>
             </div>
             <i class="fas fa-info-circle"></i>
-            <!-- <button>Submit Request</button> -->
-        </div>
+            button>Submit Request</button>
+        </div> -->
     </div>
 
     <app-selectors *ngIf="state <= 3"></app-selectors>
@@ -23,6 +23,6 @@
 
     <app-congo *ngIf="state == 6"></app-congo>
 
-    <app-info-map></app-info-map>
+    <app-info-map *ngIf="state != 4 && state != 5"></app-info-map>
 
 </section>

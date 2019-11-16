@@ -3,6 +3,13 @@
 section{
     margin-top: 10px;
 
+    .number{
+        color: #3a91f7;
+        font-weight: 500;
+        font-size: 3vw;
+        width: 12vw;
+    }
+
     >div.master{
         background: #F8FBFD;
         border: solid 1px #E8E8E8;
@@ -19,7 +26,7 @@ section{
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                width: 60%;
+                width: 80%;
                 color: #94A5A6;
                 i{
                     color: #94A5A6;
@@ -82,7 +89,7 @@ section{
             }
 
             >div{
-                width: 30%;
+                width: 20%;
 
                 span{
                     color: #2C3E50;

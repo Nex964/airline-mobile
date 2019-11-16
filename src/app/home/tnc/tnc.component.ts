@@ -17,12 +17,12 @@ export class TncComponent implements OnInit {
   }
 
   ngOnInit() {}
-
+  
   agree() {
     this.utils.state.next(5);
   }
 
   degree() { 
-    this.utils.state.next(3);
+    this.utils.state.next(1);
   }
 }

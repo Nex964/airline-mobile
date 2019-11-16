@@ -51,6 +51,8 @@ export class SelectorsComponent implements OnInit {
     //   document.getElementById('list_dialog').classList.add('show');
     // })
 
+    this.utils.state.next(1);
+
     this.locationList.forEach(e => {
       list.push({name: e.display.replace("=>", "to"), value: e.src + ',' + e.dest});
     })

@@ -1,6 +1,13 @@
 section {
   margin-top: 10px;
 
+  .number{
+    color: #3a91f7;
+    font-weight: 500;
+    font-size: 3vw;
+    width: 12vw;
+  }
+
   > div.master {
     background: #f8fbfd;
     border: solid 1px #e8e8e8;

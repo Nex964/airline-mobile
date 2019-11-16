@@ -1,7 +1,14 @@
 <section>
     <div class="master">
         <div class="head">
-            <img src="assets/images/ic_flight.png">
+            <div>
+                <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
+
+                <h4 class="number" style="text-align: center;">
+                    {{ item.number }}
+                </h4>
+            </div>
+    
             <div>
                 <span>
                     {{ startDate.toString().split(' ')[0] }},
@@ -13,7 +20,11 @@
                         {{ item.source.code }}
                     </h4>
                     <h3>
-                        {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
+                        {{ 
+                            item.takeOff.split(':')[0].length == 1 ? item.takeOff.split(':')[0] + '0' : item.takeOff.split(':')[0]
+                        }}:{{ 
+                            item.takeOff.split(':')[1].length == 1 ? item.takeOff.split(':')[1] + '0' : item.takeOff.split(':')[1]
+                        }}
                     </h3>
                 </span>
                 <span>
@@ -25,6 +36,11 @@
             <div>
                 <h5>{{item.totalTime}}</h5>
                 <!-- !Show time elapsed -->
+                <h5>
+                    {{
+                        item.stops == 0 ? 'Non-Stop' : item.stops + " stop"
+                    }}
+                </h5>
             </div>
             <div>
                 <span>
@@ -37,7 +53,11 @@
                         {{ item.dest.code }}
                     </h4>
                     <h3>
-                        {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
+                        {{ 
+                            item.landing.split(':')[0].length == 1 ? item.landing.split(':')[0] + '0' : item.landing.split(':')[0]
+                        }}:{{ 
+                            item.landing.split(':')[1].length == 1 ? item.landing.split(':')[1] + '0' : item.landing.split(':')[1]
+                        }}
                     </h3>
                 </span>
                 <span>
@@ -68,7 +88,7 @@
         <div *ngFor="let item of list">
             <!-- <div class="selector"> -->
                 <h4>{{list.indexOf(item) + 1}} Traveller</h4>
-                <input #meal type="button" class="but" (click)="open" class="small" [matAutocomplete]="meal" value="{{item.gender}}">
+                <input #meal type="button" class="but" (click)="open()" class="small" [matAutocomplete]="meal" value="{{item.gender}}">
                 <mat-autocomplete #meal="matAutocomplete">
                     <mat-option (click)="item.gender = 'Mr'" value="Mr">Mr</mat-option>
                     <mat-option (click)="item.gender = 'Ms'" value="Ms">Ms</mat-option>
@@ -90,6 +110,8 @@
             <input style="flex:60%;" name="number" type="number" (keyup)="contact.age = $event.target.value" placeholder="Number">
         </span>
     </div>
+
+    <app-info-map></app-info-map>
 
     <div class="traveller">
         <div>

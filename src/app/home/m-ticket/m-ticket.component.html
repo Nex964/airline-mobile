@@ -1,19 +1,30 @@
 <section>
 
     <div class="headings row">
-        <img src="assets/trip_ic.png">
-        <h4>{{
-            status
-        }}</h4>
+        <img src="assets/trip_ic_home.png" >
+        <div class="col">
+            <!-- <h4 *ngIf="status == -1" class="rans">Booking Status:</h4>
+            <h4 *ngIf="status == -1" style="text-align: center"> {{ status }}</h4>
+            <h4 *ngIf="status == 1" class="rans"> PNR:</h4>
+            <h4 *ngIf="status == 1" style="text-align: center"> {{ item.pnr }}</h4>
+            <h4 *ngIf="status == 2" class="rans">Booking Status:</h4>
+            <h4 *ngIf="status == 2" style="text-align: center"> {{ item.pnr }}</h4> -->
+            <h4  class="rans">Booking Status:</h4>
+            <h4 [class]="status == 'Confirmed' ? 'ccolor' : 'dcolor'" style="text-align: center"> {{ status }}</h4>
+        </div>
     </div>
 
     <div class="master" *ngIf="item">
 
         <div class="row airline">
-          <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
-          <div class="col">
+            <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
+            <div class="col">
                 <h4>{{item.name}}</h4>
                 <h5>{{item.number}}</h5>
+            </div>
+            <div style="text-align: end; flex: 100%" class="col">
+                <h4>PNR</h4>
+                <h5 [class]="status == 'Confirmed' ? 'ccolor-i large' : 'dcolor-i large'">{{data.pnr}}</h5>
             </div>
         </div>
         <div class="head">
@@ -30,7 +41,11 @@
                         <!-- Code -->
                     </h4>
                     <h3>
-                        {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
+                        {{ 
+                            item.takeOff.split(':')[0].length == 1 ? item.takeOff.split(':')[0] + '0' : item.takeOff.split(':')[0]
+                        }}:{{ 
+                            item.takeOff.split(':')[1].length == 1 ? item.takeOff.split(':')[1] + '0' : item.takeOff.split(':')[1]
+                        }}
                         <!-- Landing -->
                     </h3>
                 </span>
@@ -43,7 +58,12 @@
             </div>
             <div>
                 <h5>{{item.totalTime}}</h5>
-              <h5>{{item.stops==0?"Non-Stop":item.stops+" Stops"}}</h5>
+                <h5>
+                    {{
+                        item.stops == 0 ? 'Non-Stop' : item.stops + " stop"
+                    }}
+                </h5>
+                <!-- <h5>ETA</h5> -->
             </div>
             <div>
                 <span>
@@ -58,7 +78,11 @@
                         <!-- Code -->
                     </h4>
                     <h3>
-                        {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
+                        {{ 
+                            item.landing.split(':')[0].length == 1 ? item.landing.split(':')[0] + '0' : item.landing.split(':')[0]
+                        }}:{{ 
+                            item.landing.split(':')[1].length == 1 ? item.landing.split(':')[1] + '0' : item.landing.split(':')[1]
+                        }}
                         <!-- TakeOff -->
                     </h3>
                 </span>
@@ -76,43 +100,44 @@
     <div class="container" *ngIf="list">
         <div class="header row">
             <h4>PASSENGER NAME</h4>
-            <h4>PNR</h4>
-            <h4>E-TICKET NO.</h4>
-            <h4>SEAT</h4>
+            <h4>Meal</h4>
+            <h4>Cabin Baggage</h4>
+            <h4>Check-in Baggage</h4>
         </div>
 
         <div class="list row" *ngFor="let l of list">
-            <h4>{{l.name}}</h4>
-            <h4>{{data.pnr}}</h4>
-            <h4>NA</h4>
-            <h4>NA</h4>
+            <h4>{{l.name}} {{l.age}}</h4>
+            <h4>{{ item.meal ? 'Yes' : 'No' }}</h4>
+            <h4>{{item.baggage}}kg</h4>
+            <h4>{{item.checkin}}kg</h4>
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="header row">
             <h4>BAGGAGE INFORMATION</h4>
             <h4>Sector</h4>
-            <h4>Cabin</h4>
-            <h4>Check-in</h4>
         </div>
 
         <div class="list row" *ngFor="let l of list">
             <h4>{{l.name}}</h4>
-            <h4>PNR</h4>
-            <h4>{{item.baggage}}</h4>
-            <h4>{{item.checkin}}</h4>
+            <h4>{{ item.source.code }} to {{ item.dest.code }}</h4>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="container">
         <div class="header row">
-            <h3>IMPORTANT INFORMATION</h3>
+            <h3>SPECIAL TERMS AND CONDITION</h3>
         </div>
 
         <div class="list">
-            <h4>• Check-in Time : Check-in desks will close 1 hour
+            <h4>
+                {{
+                    info
+                }}
+            </h4>
+            <!-- <h4>• Check-in Time : Check-in desks will close 1 hour
                 before departure. <br>
                 • Valid ID proof needed : Carry a valid photo
                 identification proof (Driver Licence, Aadhar Card, Pan
@@ -122,47 +147,48 @@
                 :Spicejet - Use PNR and last name only. <br>
                 • To Cancel or Modify this booking, visit:
                 <a>http: //support.Mytrippartner.com </a><br>
-                • You have paid: INR 3,154  <br></h4>
+                • You have paid: INR 3,154  <br></h4> -->
         </div>
 
-        <div class="header row">
+        <!-- <div class="header row">
             <h3>CANCELLATION AND DATE CHANGE CHARGES</h3>
         </div>
 
         <div class="list">
-            <h4>• Check-in Time : Check-in desks will close 1 hour
-                before departure.<br>
-                • Valid ID proof needed : Carry a valid photo
-                identification proof (Driver Licence, Aadhar Card, Pan
-                Card or any other Government recognised photo
-                identification)<br>
-                • Web Check-in (opens 48 hrs. before departure)
-                :Spicejet - Use PNR and last name only.<br>
-                • To Cancel or Modify this booking, visit:
-                <a>http: //support.Mytrippartner.com</a><br>
-                • You have paid: INR 3,154 </h4>
-        </div>
+            <h4>All charges below are per Pax and per Segment in INR<br><br>
+                a) Adult  After departure 0 hrs - 2 hrs Non-Refundable<br><br>
+                b) Adult  After departure 2 hrs - 365 days  cancellation 
+                charges of airline : 3000 & Mytrippartner : 300
+            </h4>
+        </div> -->
     </div>
 
     <div class="container">
         <div class="header row">
-            <h3>24x7 CUSTOMER SUPPORT</h3>
+            <h3>CUSTOMER SUPPORT</h3>
         </div>
 
         <div class="list col">
             <div class="row">
-                <h4>Tel</h4>
+                <h4>Contact Number</h4>
                 <div class="col">
-                    <h4>18001028747 (India toll free)</h4>
-                    <h4>+911244628747 (India)</h4>
+                    <h4>9343321811/9900275427 (Mon-Sat 10am-7pm)</h4>
+                    <!-- <h4>+911244628747 (India)</h4> -->
                 </div>
             </div>
+        <div class="list col">
             <div class="row">
+                <h4>Email</h4>
+                <div class="col">
+                    <h4> sales@mytrippartner.com (24*7)</h4>
+                </div>
+            </div>
+            <!-- <div class="row">
                 <h4>Airline Support</h4>
                 <div class="col">
                     <h4>18602100999,912262732111</h4>
-                </div>
-            </div>
+                </div> -->
+            </div> 
         </div>
     </div>
 

@@ -1,7 +1,15 @@
 <section>
     <div class="master">
         <div class="head">
-            <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
+
+            <div>
+                <img #imgre [src]="item.image" onerror="this.src = 'assets/images/ic_flight.png'">
+
+                <h4 class="number" style="text-align: center;">
+                    {{ item.number }}
+                </h4>
+            </div>
+
             <div>
                 <span>
                     {{ startDate.toString().split(' ')[0] }},
@@ -13,7 +21,11 @@
                         {{ item.source.code }}
                     </h4>
                     <h3>
-                        {{ item.takeOff.split(':')[0] }}:{{ item.takeOff.split(':')[1] }}
+                        {{ 
+                            item.takeOff.split(':')[0].length == 1 ? item.takeOff.split(':')[0] + '0' : item.takeOff.split(':')[0]
+                         }}:{{ 
+                             item.takeOff.split(':')[1].length == 1 ? item.takeOff.split(':')[1] + '0' : item.takeOff.split(':')[1]
+                        }}
                     </h3>
                 </span>
                 <span>
@@ -23,11 +35,14 @@
                 </span>
             </div>
             <div>
-              <ul>
-                <h5>{{item.totalTime}}</h5>
-                <h5>{{item.stops==0?"Non-Stop":item.stops+" Stops"}}</h5>
-              </ul>
-
+                <ul>
+                    <h5>{{item.totalTime}}</h5>
+                    <h5>
+                        {{
+                        item.stops == 0 ? 'Non-Stop' : item.stops + " stop"
+                    }}
+                    </h5>
+                </ul>
             </div>
             <div>
                 <span>
@@ -40,7 +55,11 @@
                         {{ item.dest.code }}
                     </h4>
                     <h3>
-                        {{ item.landing.split(':')[0] }}:{{ item.landing.split(':')[1] }}
+                        {{ 
+                            item.landing.split(':')[0].length == 1 ? item.landing.split(':')[0] + '0' : item.landing.split(':')[0]
+                        }}:{{ 
+                            item.landing.split(':')[1].length == 1 ? item.landing.split(':')[1] + '0' : item.landing.split(':')[1]
+                        }}
                     </h3>
                 </span>
                 <span>
@@ -48,33 +67,38 @@
                         {{ item.dest.name }}
                     </h5>
                 </span>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <span>
+                    <i class="fas fa-suitcase"></i>
+                    <h6>Checkin : {{item.checkin.replace('kg', '')}} KG</h6>
+                    <ul>
+                        <li>
+                            <h5>Baggage : {{item.baggage.replace('kg', '')}} KG</h5>
+                        </li>
+                    </ul>
+
+                    <!-- <i class="fas fa-suitcase"></i>
+                <h6>Baggage : {{item.baggage.replace('kg', '')}} KG</h6> -->
+                </span>
+                <span>
+                    <h3>₹ {{ item.rate }}</h3>
+                </span>
+            </div>
+            <div>
+                <span style="width: 40%">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Meal : {{ item.meal ? 'Yes' : 'No' }}</h4>
+                </span>
+                <span>
+                    <h4 class="seats">{{item.seats}} Seats left</h4>
+                </span>
+                <div class="selector" (click)="showTravellersSelect()">
+                    <h4 [id]="item._id">Select Travellers</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </div>
-        <div class="divider"></div>
-        <div>
-            <span>
-                <i class="fas fa-suitcase"></i>
-                <h6>Checkin : {{item.checkin.replace('kg', '')}} KG</h6>
-                <ul>
-                  <li><h5>Baggage : {{item.baggage.replace('kg', '')}} KG</h5></li>
-                </ul>
-            </span>
-          <span>
-                <h3>₹ {{ item.rate }}</h3>
-            </span>
-        </div>
-        <div>
-            <span style="width: 40%">
-                <i class="fas fa-utensils"></i>
-                <h4>Meal : {{ item.meal ? 'Yes' : 'No' }}</h4>
-            </span>
-            <span>
-                <h4 class="seats">{{item.seats}} Seats left</h4>
-            </span>
-            <div class="selector" (click)="showTravellersSelect()">
-                <h4 [id]="item._id">Select Travellers</h4>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </div>
 </section>
