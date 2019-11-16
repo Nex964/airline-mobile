@@ -10,7 +10,7 @@
             <h4 *ngIf="status == 2" class="rans">Booking Status:</h4>
             <h4 *ngIf="status == 2" style="text-align: center"> {{ item.pnr }}</h4> -->
             <h4  class="rans">Booking Status:</h4>
-            <h4 style="text-align: center"> {{ status }}</h4>
+            <h4 [class]="status == 'Confirmed' ? 'ccolor' : 'dcolor'" style="text-align: center"> {{ status }}</h4>
         </div>
     </div>
 
@@ -21,6 +21,10 @@
             <div class="col">
                 <h4>{{item.name}}</h4>
                 <h5>{{item.number}}</h5>
+            </div>
+            <div style="text-align: end; flex: 100%" class="col">
+                <h4>PNR</h4>
+                <h5 [class]="status == 'Confirmed' ? 'ccolor-i large' : 'dcolor-i large'">{{data.pnr}}</h5>
             </div>
         </div>
         <div class="head">
@@ -96,34 +100,30 @@
     <div class="container" *ngIf="list">
         <div class="header row">
             <h4>PASSENGER NAME</h4>
-            <h4>PNR</h4>
-            <h4>E-TICKET NO.</h4>
-            <h4>SEAT</h4>
+            <h4>Meal</h4>
+            <h4>Cabin Baggage</h4>
+            <h4>Check-in Baggage</h4>
         </div>
 
         <div class="list row" *ngFor="let l of list">
-            <h4>{{l.name}}</h4>
-            <h4>{{data.pnr}}</h4>
-            <h4>N/A</h4>
-            <h4>N/A</h4>
+            <h4>{{l.name}} {{l.age}}</h4>
+            <h4>{{ item.meal ? 'Yes' : 'No' }}</h4>
+            <h4>{{item.baggage}}kg</h4>
+            <h4>{{item.checkin}}kg</h4>
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="header row">
             <h4>BAGGAGE INFORMATION</h4>
             <h4>Sector</h4>
-            <h4>Cabin</h4>
-            <h4>Check-in</h4>
         </div>
 
         <div class="list row" *ngFor="let l of list">
             <h4>{{l.name}}</h4>
             <h4>{{ item.source.code }} to {{ item.dest.code }}</h4>
-            <h4>{{item.baggage}}</h4>
-            <h4>{{item.checkin}}</h4>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="container">
@@ -132,7 +132,11 @@
         </div>
 
         <div class="list">
-            <textarea readonly="true">{{info}}</textarea>
+            <h4>
+                {{
+                    info
+                }}
+            </h4>
             <!-- <h4>• Check-in Time : Check-in desks will close 1 hour
                 before departure. <br>
                 • Valid ID proof needed : Carry a valid photo

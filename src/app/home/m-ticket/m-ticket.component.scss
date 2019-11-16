@@ -19,7 +19,7 @@ section {
       justify-content: space-between;
 
       h4{
-        color: #3a91f7;
+        // color: #3a91f7;
         font-size: 3vw;
         font-weight: 500;
         width: 100%;
@@ -36,13 +36,13 @@ section {
       border-top: solid 0.1px #CED7D8;
       justify-content: space-between;
 
-      textarea {
+      h4 {
+        white-space:pre-wrap;
         width: calc(100% - 40px);
         text-align: start;
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 20px;
-        height: 40vh;
         background: #0000;
         border: none;
         outline: none;
@@ -89,19 +89,19 @@ section {
 
     img {
       width: auto;
-      height: 6vh;
+      height: 8vh;
     }
 
     h4 {
-      font-weight: 400;
-      color: #3a91f7;
-      background: #f8f8f8;
-      padding: 4px;
-      border-radius: 1000px;
-      padding-left: 20px;
-      padding-right: 20px;
 
       &.rans{
+        font-weight: 400;
+        color: #3a91f7;
+        background: #f8f8f8;
+        padding: 4px;
+        border-radius: 1000px;
+        padding-left: 20px;
+        padding-right: 20px;
         background: #FFF;
       }
     }
@@ -119,6 +119,8 @@ section {
 
       img{
         margin-right: 20px;
+        width: 5vh;
+        height: 5vh;
       }
 
       h4 {
@@ -129,6 +131,10 @@ section {
       h5 {
         font-weight: 500;
         color: #2c3e50;
+
+        &.large{
+          font-size: 4vw;
+        }
       }
     }
 
@@ -369,4 +375,34 @@ button {
     color: #2c3e50;
     font-size: 6vw;
   }
+}
+
+.dcolor{
+  font-weight: 400;
+  background: #f8f8f8;
+  padding: 4px;
+  border-radius: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.ccolor{
+  color: #17a085;
+  font-weight: 400;
+  background: #f8f8f8;
+  padding: 4px;
+  border-radius: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 600;
+}
+
+.dcolor-i{
+  color: #e74c3c !important;
+}
+
+.ccolor-i{
+  color: #17a085 !important;
 }
