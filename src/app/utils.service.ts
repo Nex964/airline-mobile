@@ -62,7 +62,7 @@ export class UtilsService {
   setState(val: number) {
     this.state.next(val);
     // if(val == 4){
-      
+
     // }
   }
 
@@ -270,6 +270,8 @@ export interface Contact {
 
 export interface Passenger {
   name: string;
+  fName:string,
+  lName:string,
   age: string;
   gender: string;
 }

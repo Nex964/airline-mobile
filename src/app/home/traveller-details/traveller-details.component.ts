@@ -84,18 +84,23 @@ export class TravellerDetailsComponent implements OnInit {
   submit() {
 
     this.list.forEach(e => {
+      e.name=e.fName+' '+e.lName;
       if (e.gender.length <= 2) {
         alert("Select a gender of Traveller"+  + (this.list.indexOf(e) + 1) )
         return
       }
-      if (e.name.length < 1) {
-        alert("Enter a name of "  + " Traveller"+ (this.list.indexOf(e) + 1))
+      if (e.fName.length <= 1) {
+        alert("Enter a first name of "  + " Traveller"+ (this.list.indexOf(e) + 1))
         return
       }
-      if (e.age.length < 1) {
-        alert("Enter a last name of " + " Traveller" + (this.list.indexOf(e) + 1))
+      if (e.lName.length <= 1) {
+        alert("Enter a last name of "  + " Traveller"+ (this.list.indexOf(e) + 1))
         return
       }
+      // if (e.age.length < 1) {
+      //   alert("Enter a last name of " + " Traveller" + (this.list.indexOf(e) + 1))
+      //   return
+      // }
     })
 
     if (this.contact.gender.length < 1) {
