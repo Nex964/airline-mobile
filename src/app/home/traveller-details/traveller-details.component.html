@@ -20,9 +20,9 @@
                         {{ item.source.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.takeOff.split(':')[0].length == 1 ? '0' + item.takeOff.split(':')[0] : item.takeOff.split(':')[0]
-                         }}:{{ 
+                         }}:{{
                              item.takeOff.split(':')[1].length == 1 ? '0' + item.takeOff.split(':')[1] : item.takeOff.split(':')[1]
                         }}
                     </h3>
@@ -71,9 +71,9 @@
         <div>
             <span>
                 <i class="fas fa-suitcase"></i>
-                <h4>CheckIn : {{item.checkin.replace('kg', '')}} KG</h4>
+                <h4>Check in : {{item.checkin.replace('kg', '')}} KG</h4>
                 <ul>
-                    <li>Baggage : {{item.baggage.replace('kg', '')}} KG</li>
+                    <li>Cabin : {{item.baggage.replace('kg', '')}} KG</li>
                 </ul>
             </span>
             <span>
@@ -85,15 +85,21 @@
 
     <div class="info">
         <h3>Traveller Information</h3>
-        <div *ngFor="let item of list">
+        <div *ngFor="let item of list; let i=index">
             <!-- <div class="selector"> -->
                 <h4>{{list.indexOf(item) + 1}} Traveller</h4>
-                <input #meal type="button" class="but" (click)="open()" class="small" [matAutocomplete]="meal" value="{{item.gender}}">
-                <mat-autocomplete #meal="matAutocomplete">
-                    <mat-option (click)="item.gender = 'Mr'" value="Mr">Mr</mat-option>
-                    <mat-option (click)="item.gender = 'Ms'" value="Ms">Ms</mat-option>
-                    <mat-option (click)="item.gender = 'Mrs'" value="Mrs">Mrs</mat-option>
-                </mat-autocomplete>
+          <select [(ngModel)]=item.gender (click)="testFun(i)" class="ashishKutta">
+<!--            <option default>Please select below</option>-->
+            <option value="Mr." selected>Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms." >Ms.</option>
+          </select>
+<!--                <input #meal type="button" class="but" (click)="open()" class="small" [matAutocomplete]="meal" value="{{item.gender}}">-->
+<!--                <mat-autocomplete #meal="matAutocomplete">-->
+<!--                    <mat-option (click)="item.gender = 'Mr'" value="Mr">Mr</mat-option>-->
+<!--                    <mat-option (click)="item.gender = 'Ms'" value="Ms">Ms</mat-option>-->
+<!--                    <mat-option (click)="item.gender = 'Mrs'" value="Mrs">Mrs</mat-option>-->
+<!--                </mat-autocomplete>-->
                 <!-- <i class="fas fa-chevron-down"></i> -->
             <!-- </div> -->
             <input name="firstname" placeholder="First Name" (keyup)="item.name = $event.target.value" [value]="item.name">

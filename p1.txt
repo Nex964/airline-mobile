@@ -52,3 +52,26 @@
     "typescript": "~3.5.3"
   }
 }
+
+
+
+
+//// edited
+{
+  "name": "web-test",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "buildppm": "ng build-prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "app": "nodemon app.js"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "latest"
+  }
+}

@@ -21,9 +21,9 @@
                         {{ item.source.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.takeOff.split(':')[0].length == 1 ? '0' + item.takeOff.split(':')[0] : item.takeOff.split(':')[0]
-                         }}:{{ 
+                         }}:{{
                              item.takeOff.split(':')[1].length == 1 ? '0' + item.takeOff.split(':')[1] : item.takeOff.split(':')[1]
                         }}
                     </h3>
@@ -55,9 +55,9 @@
                         {{ item.dest.code }}
                     </h4>
                     <h3>
-                        {{ 
+                        {{
                             item.landing.split(':')[0].length == 1 ? '0' +  item.landing.split(':')[0] : item.landing.split(':')[0]
-                        }}:{{ 
+                        }}:{{
                             item.landing.split(':')[1].length == 1 ? '0' + item.landing.split(':')[1] : item.landing.split(':')[1]
                         }}
                     </h3>
@@ -73,10 +73,10 @@
             <div>
                 <span>
                     <i class="fas fa-suitcase"></i>
-                    <h6>Checkin : {{item.checkin.replace('kg', '')}} KG</h6>
+                    <h6>Check in : {{item.checkin.replace('kg', '')}} KG</h6>
                     <ul>
                         <li>
-                            <h5>Baggage : {{item.baggage.replace('kg', '')}} KG</h5>
+                            <h5>Cabin : {{item.baggage.replace('kg', '')}} KG</h5>
                         </li>
                     </ul>
 

@@ -1,6 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FlightModel, UtilsService, Passenger, Contact, AddTravellerRequest, AddRequestModel } from 'src/app/utils.service';
-import { MatAutocompleteTrigger } from '@angular/material';
+import {Component, OnInit, ViewChild,} from '@angular/core';
+import {
+  AddRequestModel,
+  AddTravellerRequest,
+  Contact,
+  FlightModel,
+  Passenger,
+  UtilsService
+} from 'src/app/utils.service';
+import {MatAutocompleteTrigger} from '@angular/material';
 
 @Component({
   selector: 'app-traveller-details',
@@ -16,11 +23,13 @@ export class TravellerDetailsComponent implements OnInit {
   item: FlightModel;
   startDate: Date = new Date();
   endDate: Date = new Date();
+  testVar: any;
 
   price = "0"
 
   @ViewChild('meal', {static: false}) auto;
   @ViewChild(MatAutocompleteTrigger, {static: false, read: MatAutocompleteTrigger}) meal: MatAutocompleteTrigger;
+  private ac: any;
 
 
   constructor(private utils: UtilsService) {
@@ -29,7 +38,7 @@ export class TravellerDetailsComponent implements OnInit {
     let travellers = this.utils.travellers;
 
     for (let i = 0; i < travellers; i++) {
-      this.list[i] = { gender: 'Mrs.', name: '', age: '' } as Passenger;
+      this.list[i] = {gender: '', name: '', age: ''} as Passenger;
     }
 
 
@@ -51,33 +60,46 @@ export class TravellerDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + " x " + this.utils.travellers + " passenger)"
-   }
+    this.price = this.utils.travellers * parseInt(this.utils.selectedFlight.rate) + " (" + this.utils.selectedFlight.rate + " x " + this.utils.travellers + " passenger)";
+    console.log(this.testVar);
+    this.list.push()
+  }
 
-  open(){
-    
+  open(e) {
+    console.log(e);
+    this.ac =  document.getElementById('ashishChutiya');
+    // this.ac.focus();
     this.meal.openPanel();
   }
+  testFun(e) {
+    console.log(this.list);
+    console.log(this.testVar);
+  }
+
+  // open(meal) {
+  //   console.log('clicked');
+  //   meal.openPanel();
+  // }
 
   submit() {
 
     this.list.forEach(e => {
-      if (e.gender.length < 1) {
-        alert("Select a gender of " + (this.list.indexOf(e) + 1) + " Traveller")
+      if (e.gender.length <= 2) {
+        alert("Select a gender of Traveller"+  + (this.list.indexOf(e) + 1) )
         return
       }
       if (e.name.length < 1) {
-        alert("Enter a name of " + (this.list.indexOf(e) + 1) + " Traveller")
+        alert("Enter a name of "  + " Traveller"+ (this.list.indexOf(e) + 1))
         return
       }
       if (e.age.length < 1) {
-        alert("Enter a last name of " + (this.list.indexOf(e) + 1) + " Traveller")
+        alert("Enter a last name of " + " Traveller" + (this.list.indexOf(e) + 1))
         return
       }
     })
 
     if (this.contact.gender.length < 1) {
-      alert("Enter a Email Id")
+      alert("Enter Email Address")
       return
     }
 
@@ -86,8 +108,8 @@ export class TravellerDetailsComponent implements OnInit {
       return
     }
 
-    if (this.contact.age.length < 1) {
-      alert('Enter a number')
+    if (this.contact.age.length < 10) {
+      alert('Enter mobile number')
       return
     }
 

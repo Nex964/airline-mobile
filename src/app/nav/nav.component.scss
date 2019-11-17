@@ -3,13 +3,13 @@
 section{
     background: linear-gradient(to right bottom, rgb(230, 230, 230), rgb(255, 255, 255));
     height: 120vh;
-    transition-duration: 1s;
+    transition-duration: 0.9s;
 
     span{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60%;
+        height: 40%;
         position: static;
 
         img{
@@ -23,6 +23,6 @@ section{
     }
 
     &.collapse{
-        height: 23vh;
+        height: 19vh;
     }
 }
